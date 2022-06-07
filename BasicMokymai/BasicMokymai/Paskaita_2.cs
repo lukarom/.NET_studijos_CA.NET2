@@ -49,54 +49,84 @@
             //var raide = Console.ReadKey();
 
             //Pirma uzduotis
-            Console.WriteLine("Romuald");
+            //Console.WriteLine("Romuald");
 
             //Antra uzduotis
-            Console.WriteLine("iveskite savo varda");
-            Console.WriteLine("jusu vardas: " + Console.ReadLine());
+            //Console.WriteLine("iveskite savo varda");
+            //Console.WriteLine("jusu vardas: " + Console.ReadLine());
 
             //Trecia uzduotis
-            Console.WriteLine("iveskite savo varda: ");
-            var vardas = Console.ReadLine()[0];
-            Console.WriteLine("Vardo pirmoji raide ASCII formatu: " + (int)vardas);
+            //Console.WriteLine("iveskite savo varda: ");
+            //var vardas = Console.ReadLine()[0];
+            //Console.WriteLine("Vardo pirmoji raide ASCII formatu: " + (int)vardas);
 
             //Ketvirta uzduotis
-            Console.WriteLine("Iveskite savo varda");
-            var vardas1 = Console.ReadLine()[0];
-            Console.WriteLine("Ivesto vardo pirma raide:" + vardas1);
-            Console.WriteLine("Iveskite skaiciu:");
-            var skaicius = Console.ReadLine();
-            Console.WriteLine("Ivestas skaicius:" + skaicius);
-            int suma = vardas1 + Convert.ToInt32(skaicius);
-            Console.WriteLine("Vardo pirmos raides ir skaiciaus suma: {0:C}", suma);
+            // Console.WriteLine("Iveskite savo varda");
+            //I var tipo kintamaji irasau ivesto vardo pirmaja raide
+            //var vardas1 = Console.ReadLine()[0];
+            //Console.WriteLine("Ivesto vardo pirma raide:" + vardas1);
+            //Console.WriteLine("Iveskite skaiciu:");
+            //I var tipo kintamaji irasau ivesta skaiciu
+            //var skaicius = Console.ReadLine();
+            // Console.WriteLine("Ivestas skaicius:" + skaicius);
+            //Sudedu i int kintamaji vardas1 ir skaiciaus int fomratu
+            //int suma = vardas1 + Convert.ToInt32(skaicius);
+            //Console.WriteLine("Vardo pirmos raides ir skaiciaus suma: {0}", suma);
 
 
             //Penkta uzduotis
-            MenuMenu();
-        }
 
-        private static bool MenuMenu()
-        {
-            Console.WriteLine("Pasirinkite viena is opciju");
-            Console.WriteLine("(1) Pirkti");
-            Console.WriteLine("(2) Parduoti");
-            Console.WriteLine("(3) Likuciai");
-            
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    Console.WriteLine("Pirkti");
-                    return true;
-                case "2":
-                    Console.WriteLine("Parduoti");
-                    return true;
-                case "3":
-                    Console.WriteLine("Likuciai");
-                    return true;
-                default:
-                    Console.WriteLine("Netinkamas pasirinkimas");
-                    return MenuMenu();
-            }
+            /*
+                Console.WriteLine("Pasirinkite viena is opciju");
+                Console.WriteLine("(1) Pirkti");
+                Console.WriteLine("(2) Parduoti");
+                Console.WriteLine("(3) Likuciai");
+
+                Console.WriteLine("\"Pasirinkimas yra: " + Console.ReadLine() + "\"");
+                Console.WriteLine("\"Pasirinkimas yra: {0}\"", Console.ReadLine());
+                Console.WriteLine($"\"Pasirinkimas yra: {Console.ReadLine()}\"");*/
+
+
+
+            //Papildoma uzduotis
+
+            // Console.WriteLine(@"
+            //L
+            //A
+            //B
+            //A
+            //S");
+
+            //Console.WriteLine("\"LABAS\"");
+
+            // Console.WriteLine($"{(char)0x22}labas{(char)0x22}");
+
+            Console.WriteLine("Irasykite savo vardo ir as atspesiu antraja raide");
+            Console.WriteLine(Console.ReadLine()[1]);
+
+            Console.WriteLine("Irasykite savo vardo ir pasakysiu kiek raidziu turi vardas");
+            Console.WriteLine(Console.ReadLine().Length);
+
+
+
+
+            //switch (Console.ReadLine())
+            //{
+            //    case "1":
+            //        Console.WriteLine("Pirkti");
+            //        return true;
+            //    case "2":
+            //        Console.WriteLine("Parduoti");
+            //        return true;
+            //    case "3":
+            //        Console.WriteLine("Likuciai");
+            //        return true;
+            //    default:
+            //        Console.WriteLine("Netinkamas pasirinkimas");
+            //        return MenuMenu();
+            //}
+
+
 
         }
     }
