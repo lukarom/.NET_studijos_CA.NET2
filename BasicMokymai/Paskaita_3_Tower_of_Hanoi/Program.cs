@@ -317,7 +317,7 @@
             ThirdColThirdRow = "           |";
             ThirdColFourthRow = "          #|#";
             ThirdColFifthRow = "         ##|##";
-
+            
             PirmaEilute = $"1eil.{FirstColFirstRow}{SecondColFirstRow}{ThirdColFirstRow}";
             AntraEilute = $"2eil.{FirstColSecondRow}{SecondColSecondRow}{ThirdColSecondRow}";
             TreciaEilute = $"3eil.{FirstColThirdRow}{SecondColThirdRow}{ThirdColThirdRow}";

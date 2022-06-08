@@ -26,6 +26,13 @@
           """"                     """"
             """"                """"
                 """"""""""""""""""""""");
+
+            Console.WriteLine("sabina " +
+                "poszla " +
+                "spac");
+            Console.WriteLine(@"sabina
+poszla
+spac");
         }
     }
 }
