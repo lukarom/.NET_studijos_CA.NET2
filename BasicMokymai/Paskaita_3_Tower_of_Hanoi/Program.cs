@@ -37,6 +37,8 @@
             //ir iki 12 antram stulpeliui. Trecias stulpelis siuo atveju lieka per ta pati atsuma nuo antro stulpelio,
             //nes antras stulpelis lieka tuscias. Atitinkami skaiciavimai atliekami treciai ketivrtai ir penktai eilutei.
 
+            Console.WriteLine("1. nupieškite Tower of Hanoi. Piešiniui naudokite kintamuosius.");
+
             FirstColFirstRow = "        |";
             FirstColSecondRow = "       #|#";
             FirstColThirdRow = "      ##|##";
@@ -78,7 +80,7 @@
 
             //Panasus procesas kaip ir pirmoje uzduotyje tik pirmas ir antras stulpeliai keicia atstumus atvirkstiniu budu
             //Pirmi stulpeliai turi maziausius atstumus, o Penkti stulpeliai didziausius. Trecias stulpelis lieka nepakites
-
+            Console.WriteLine("2. Apverskite pirmą sulpelį ir išveskite visą Tower of Hanoi");
 
             FirstColFirstRow = "    ####|####";
             FirstColSecondRow = "     ###|###";
@@ -120,7 +122,7 @@
             //Trecia uzduotis
 
             //Visuosuose stulpeliuose lieka tik santykiniai atstumai vienas nuo kito, 8, 13 ir 13 atitinkamai.
-
+            Console.WriteLine("3. Išvalykite pirmą stulpelį ir išveskite tuščią Tower of Hanoi");
 
             FirstColFirstRow = "        |";
             FirstColSecondRow = "        |";
@@ -163,7 +165,7 @@
 
             //Pirmo stulpelio paskutines eilutes atstumas sumazeja keturiais zingsniais iki 4. Antro stulpelio penktos eilutes
             //atstumas sumazeja 8 zignsiais iki 5. Trecio stulpelio penktos eilutes atstumas sumazeja 8 zingsniais iki 5 
-
+            Console.WriteLine("4. Į kiekvieno stulpelio 5eil įdėkite po 4 dalių elementą ir išveskite Tower of Hanoi");
 
             FirstColFirstRow = "        |";
             FirstColSecondRow = "        |";
@@ -203,7 +205,8 @@
 
 
             //Penkta uzduotis
-
+            Console.WriteLine("5. Į 1stulp 5eil įdėkite 4 dalių elementą, 2sutup 5eil - 3 dalių, 3sutup 4eil - 1 dalies, " +
+                "3sutup 5eil - 2 dalių, ir išveskite Tower of Hanoi");
             //Pirmo stulpelio atstumas lieka toks pats kaip praeitoje uzduotyje. Antro stulpelio ketvirta eilute padidina
             //atstuma vienu zingsniu iki 6. Trecio stulpelio trecia eilute sumazina atstumavienu zignsiu iki 12.
             //Trecio stulpelio ketvirta eilute padidina atstuma trimis zignsiais nuo 5 iki 8.
@@ -246,7 +249,7 @@
             Console.ReadLine();
 
             //Sesta uzduotis
-
+            Console.WriteLine("6. Į 1stulp 4eil įdėkite tokį pat elementą kaip yra 3stup 4eil, ir išveskite Tower of Hanoi");
             //Pirmos stulpelio ketvirtoje eiluteje sumaziname atstuma nuo 8 iki 7, del atsiradusio elemento.
             //Antro stulpelio ketvrtoje eiluteje sumaziname atstuma nuo 13 iki 12.
 
@@ -289,7 +292,7 @@
 
 
             //Septinta uzduotis
-
+            Console.WriteLine("7. Į visas 2stulp eilutes įdėkite tokį pat elementą kaip yra 3stup 5eil, ir išveskite Tower of Hanoi");
 
             //Pirmos eilutes atstumai lieka tokie patys.
             //Antro stulpelio pirmos antros ir trecios eilutes atstumai sumazeja 2 zignsiais iki 11.
@@ -336,7 +339,7 @@
             Console.ReadLine();
 
             //Astunta uzduotis
-
+            Console.WriteLine("8. į 3stulp sudėkite teisingą piramidę. 1stulp ir 2 stulp turi likti tušti, išveskite Tower of Hanoi");
 
             //Pirmi du stulpeliai lieka su piriminiais atstumais, 8 ir 13 atitinkamai.
             //Trecio stulpelio pirma eilute irgi lieka per 13 zingsniu nuo antro stulpelio
@@ -379,7 +382,7 @@
             Console.ReadLine();
 
             //Devinta uzduotis
-
+            Console.WriteLine("9. pakeiskite visų elementų dizainą iš # į , išveskite Tower of Hanoi");
 
             FirstColFirstRow = "        |";
             FirstColSecondRow = "        |";
@@ -427,8 +430,8 @@
 
 
             //Desimta Uzduotis
+            Console.WriteLine("10. paprašykite naudotojo nupiešti 1 sulpelio 1 eilutę. Išveskite visą Tower of Hanoi su perpiešta pirma eilute ");
 
-          
             //Sukurti kintamieji suagoti naujiems pirmu eiluciu zenklams
             //Naudotojas iveda po viena simboli kiekvienai eilutei
             //Pakeisti pirmu eiluciu kintamieji, kad atvaizduotu simbolius tinkamuose vietose
