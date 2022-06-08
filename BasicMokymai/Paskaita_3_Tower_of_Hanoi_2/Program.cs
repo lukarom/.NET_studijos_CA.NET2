@@ -38,10 +38,10 @@
 
             Console.WriteLine("1. nupieškite Tower of Hanoi. Piešiniui naudokite kintamuosius.");
 
-            FirstColFirstRow = "|";
-            FirstColSecondRow = "#|#";
-            FirstColThirdRow = "##|##";
-            FirstColFourthRow = "###|###";
+            FirstColFirstRow = "    |    ";
+            FirstColSecondRow = "   #|#   ";
+            FirstColThirdRow = "  ##|##  ";
+            FirstColFourthRow = " ###|### ";
             FirstColFifthRow = "####|####";
 
             SecondColFirstRow = "|";
@@ -56,12 +56,12 @@
             ThirdColThirdRow = "|";
             ThirdColFourthRow = "|";
             ThirdColFifthRow = "|";
-
-            string PirmaEilute = $"1eil.{FirstColFirstRow}{SecondColFirstRow}{ThirdColFirstRow}";
-            string AntraEilute = $"2eil.{FirstColSecondRow}{SecondColSecondRow}{ThirdColSecondRow}";
-            string TreciaEilute = $"3eil.{FirstColThirdRow}{SecondColThirdRow}{ThirdColThirdRow}";
-            string KetvirtaEilute = $"4eil.{FirstColFourthRow}{SecondColFourthRow}{ThirdColFourthRow}";
-            string PenktaEilute = $"5eil.{FirstColFifthRow}{SecondColFifthRow}{ThirdColFifthRow}";
+             
+            string PirmaEilute = $"1eil.{FirstColFirstRow} {SecondColFirstRow} {ThirdColFirstRow}";
+            string AntraEilute = $"2eil.{FirstColSecondRow} {SecondColSecondRow} {ThirdColSecondRow}";
+            string TreciaEilute = $"3eil.{FirstColThirdRow} {SecondColThirdRow} {ThirdColThirdRow}";
+            string KetvirtaEilute = $"4eil.{FirstColFourthRow} {SecondColFourthRow} {ThirdColFourthRow}";
+            string PenktaEilute = $"5eil.{FirstColFourthRow} {FirstColFifthRow} {FirstColFifthRow}";
             string ApatineEilute = $"       ---1stulp---  ---2stulp---  ---3stulp---           ";
 
 
