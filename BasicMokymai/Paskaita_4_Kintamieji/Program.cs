@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Kintamieji");
+            /*Console.WriteLine("Kintamieji");
             //Skaiciu kintamieji
             //Sveiku skaiciu kintamieji
             byte mazasSkaicius = 2; //iki 255 skaiciu
@@ -56,7 +56,54 @@
             Console.WriteLine("sudetingesni kintamieji");
 
             KeyValuePair<int, string> raiktasIrReiksme = new KeyValuePair<int, string>(10, "Laptop");
-            Tuple<int, int, string> tuple = new Tuple<int, int, string>(20, 1500, "Laptop");//iki 7 reiksmiu
+            Tuple<int, int, string> tuple = new Tuple<int, int, string>(20, 1500, "Laptop");//iki 7 reiksmiu*/
+
+            /////////////////////////////////////////////////////
+            //Pirma uzduotis
+
+
+            // string mokyklosPavadinimas = "Code Academy";
+            // string kursoPavadinimas = ".CA.NET2";
+            // int studentuSkaicius = 18;
+             var siandienosData = new DateTime(2022, 06, 08);
+
+
+             //Console.WriteLine($"Mokyklos Pavadinimas: {mokyklosPavadinimas}" +
+              //   $"\nKurso Pavadinimas: {kursoPavadinimas}" +
+               //  $"\nStudentu Skaicius: {studentuSkaicius}" +
+               //  $"\nSiandienos Data: {siandienosData.ToShortDateString()}");*/
+
+            var kursoPradziosData = new DateTime(2022, 05, 30);
+            var kursoPabaigosData = new DateTime(2022, 12, 31);
+
+            var kursoTrukme = siandienosData - kursoPradziosData;
+
+            //Antra Uzduotis
+
+            Console.WriteLine("Kurso Pradzios Data: ");
+            Console.WriteLine(kursoPradziosData.ToShortDateString());
+            Console.WriteLine("Kurso Pabaigos Data: ");
+            Console.WriteLine(kursoPabaigosData.ToShortDateString());
+            Console.WriteLine("Kurso trukme: ");
+            Console.WriteLine(kursoTrukme.TotalDays + " dienu");
+
+            //Trecia uzduotis
+
+            var tekstas = "tekstas";
+            var skaitmuo = 34;
+            bool loginis = true;
+
+            Console.WriteLine(tekstas + " " + skaitmuo + " " + loginis);
+            Console.WriteLine("{0} {1} {2}", tekstas, skaitmuo, loginis);
+            Console.WriteLine($"{tekstas} {skaitmuo} {loginis}");
+
+            var skaicius1 = 1;
+            var skaicius2 = 2;
+            var skaicius3 = 3;
+
+            Console.WriteLine(skaicius1 + " " + skaicius2 + " " + skaicius3);
+            Console.WriteLine("{0} {1} {2}", skaicius1, skaicius2, skaicius3);
+            Console.WriteLine($"{skaicius1} {skaicius2} {skaicius3}");
 
 
         }
