@@ -12,7 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_3_Tower_of_Hanoi",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_3_Tower_of_Hanoi_2", "Paskaita_3_Tower_of_Hanoi_2\Paskaita_3_Tower_of_Hanoi_2.csproj", "{869A1465-734E-4028-AE84-FFCEF347F0E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_4_Kintamieji", "Paskaita_4_Kintamieji\Paskaita_4_Kintamieji.csproj", "{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_4_Kintamieji", "Paskaita_4_Kintamieji\Paskaita_4_Kintamieji.csproj", "{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Variable_Types", "Paskaita_5_Variable_Types\Paskaita_5_Variable_Types.csproj", "{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
