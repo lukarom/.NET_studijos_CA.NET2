@@ -84,13 +84,13 @@
             var middleLine_6 = " - | | - ";
             var middleLine_7 = " - | | - ";
             var middleLine_8 = " - | | - ";
+            var middleLineSpecial = " - |#| - ";
 
-            
-            
+
             //drawing the thermometer
             var firstLineTerm = "|---------------------|";
             var secondLineTerm = "|    ^F    _    ^C    |";
-            var thermLine8 = $"| {TempFarenheit8} {middleLine8} {TempCels8} |";
+            var thermLine8 = $"| {TempFarenheit8} {middleLine8} {TempCels8} | ";
             var thermLine7 = $"| {TempFarenheit7} {middleLine7} {TempCels7} | ";
             var thermLine6 = $"| {TempFarenheit6} {middleLine6} {TempCels6} | ";
             var thermLine5 = $"| {TempFarenheit5} {middleLine5} {TempCels5} | ";
@@ -107,9 +107,20 @@
             var thermLine_6 = $"| {TempFarenheit_6} {middleLine_6} {TempCels_6} | ";
             var thermLine_7 = $"| {TempFarenheit_7} {middleLine_7} {TempCels_7} | ";
             var thermLine_8 = $"| {TempFarenheit_8} {middleLine_8} {TempCels_8} | ";
+            var bottLine1 = $"|       '***'      | ";
+            var bottLine2 = $"|      (****)      | ";
+            var bottLine3 = $"|       '___'      | ";
+            var bottLine4 = $"|___________________| ";
 
-            thermLine0.Replace(middleLine0, middleLine1);
 
+           thermLine_1=thermLine_1.Replace(middleLine_1, middleLineSpecial);
+           thermLine_2=thermLine_2.Replace(middleLine_2, middleLineSpecial);
+           thermLine_3=thermLine_3.Replace(middleLine_3, middleLineSpecial);
+           thermLine_4=thermLine_4.Replace(middleLine_4, middleLineSpecial);
+           thermLine_5=thermLine_5.Replace(middleLine_5, middleLineSpecial);
+           thermLine_6=thermLine_6.Replace(middleLine_6, middleLineSpecial);
+           thermLine_7=thermLine_7.Replace(middleLine_7, middleLineSpecial);
+           thermLine_8=thermLine_8.Replace(middleLine_8, middleLineSpecial);
 
 
             Console.WriteLine(
@@ -131,7 +142,10 @@
                 $"\n{thermLine_5}" +
                 $"\n{thermLine_6}" +
                 $"\n{thermLine_7}" +
-                $"\n{thermLine_8}");
+                $"\n{bottLine1}" +
+                $"\n{bottLine2}" +
+                $"\n{bottLine3}" +
+                $"\n{bottLine4}");
 
             var newTempCels = Convert.ToString(Console.ReadLine());
             Console.WriteLine($"Iveskite temperatura: {Console.ReadLine}");
