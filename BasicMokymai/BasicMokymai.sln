@@ -14,13 +14,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_3_Tower_of_Hanoi_2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_4_Kintamieji", "Paskaita_4_Kintamieji\Paskaita_4_Kintamieji.csproj", "{15360656-31D5-4A6C-A375-8EE7B8C1E8CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Variable_Types", "Paskaita_5_Variable_Types\Paskaita_5_Variable_Types.csproj", "{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_5_Variable_Types", "Paskaita_5_Variable_Types\Paskaita_5_Variable_Types.csproj", "{3D743DD5-DC35-4A7E-9DB7-DEF304B35753}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Matematika", "Paskaita_5_Matematika\Paskaita_5_Matematika.csproj", "{F88B40C3-9869-464C-9B53-502755B470B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_5_Matematika", "Paskaita_5_Matematika\Paskaita_5_Matematika.csproj", "{F88B40C3-9869-464C-9B53-502755B470B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Uzdaviniai", "Paskaita_5_Uzdaviniai\Paskaita_5_Uzdaviniai.csproj", "{4F134433-861D-4D65-92BB-92E7EEB03774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_5_Uzdaviniai", "Paskaita_5_Uzdaviniai\Paskaita_5_Uzdaviniai.csproj", "{4F134433-861D-4D65-92BB-92E7EEB03774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_6_Reliaciniai_Operatoriai", "Paskaita_6_Reliaciniai_Operatoriai\Paskaita_6_Reliaciniai_Operatoriai.csproj", "{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_6_Reliaciniai_Operatoriai", "Paskaita_6_Reliaciniai_Operatoriai\Paskaita_6_Reliaciniai_Operatoriai.csproj", "{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_6_Reliaciniai_Kitamieji_Uzduotys", "Paskaita_6_Reliaciniai_Kitamieji_Uzduotys\Paskaita_6_Reliaciniai_Kitamieji_Uzduotys.csproj", "{96D4555B-146F-4BAC-BB8B-C369650EA56D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D4555B-146F-4BAC-BB8B-C369650EA56D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D4555B-146F-4BAC-BB8B-C369650EA56D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D4555B-146F-4BAC-BB8B-C369650EA56D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D4555B-146F-4BAC-BB8B-C369650EA56D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
