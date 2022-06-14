@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Matematika", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_5_Uzdaviniai", "Paskaita_5_Uzdaviniai\Paskaita_5_Uzdaviniai.csproj", "{4F134433-861D-4D65-92BB-92E7EEB03774}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_6_Reliaciniai_Operatoriai", "Paskaita_6_Reliaciniai_Operatoriai\Paskaita_6_Reliaciniai_Operatoriai.csproj", "{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{4F134433-861D-4D65-92BB-92E7EEB03774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F134433-861D-4D65-92BB-92E7EEB03774}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F134433-861D-4D65-92BB-92E7EEB03774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BC4A83-DB05-441E-B3A5-27DAB534B81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
