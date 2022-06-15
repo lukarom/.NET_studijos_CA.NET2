@@ -90,30 +90,32 @@
             //drawing the thermometer
             var firstLineTerm = "|---------------------|";
             var secondLineTerm = "|    ^F    _    ^C    |";
-            var thermLine8 = $"| {TempFarenheit8} {middleLine8} {TempCels8} | ";
-            var thermLine7 = $"| {TempFarenheit7} {middleLine7} {TempCels7} | ";
-            var thermLine6 = $"| {TempFarenheit6} {middleLine6} {TempCels6} | ";
-            var thermLine5 = $"| {TempFarenheit5} {middleLine5} {TempCels5} | ";
-            var thermLine4 = $"| {TempFarenheit4} {middleLine4} {TempCels4} | ";
-            var thermLine3 = $"| {TempFarenheit3} {middleLine3} {TempCels3} | ";
-            var thermLine2 = $"| {TempFarenheit2} {middleLine2} {TempCels2} | ";
-            var thermLine1 = $"| {TempFarenheit1} {middleLine1} {TempCels1} | ";
-            var thermLine0 = $"| {TempFarenheit0} {middleLine0} {TempCels0} | ";
-            var thermLine_1 = $"| {TempFarenheit_1} {middleLine_1} {TempCels_1} | ";
-            var thermLine_2 = $"| {TempFarenheit_2} {middleLine_2} {TempCels_2} | ";
-            var thermLine_3 = $"| {TempFarenheit_3} {middleLine_3} {TempCels_3} | ";
-            var thermLine_4 = $"| {TempFarenheit_4} {middleLine_4} {TempCels_4} | ";
-            var thermLine_5 = $"| {TempFarenheit_5} {middleLine_5} {TempCels_5} | ";
-            var thermLine_6 = $"| {TempFarenheit_6} {middleLine_6} {TempCels_6} | ";
-            var thermLine_7 = $"| {TempFarenheit_7} {middleLine_7} {TempCels_7} | ";
-            var thermLine_8 = $"| {TempFarenheit_8} {middleLine_8} {TempCels_8} | ";
-            var bottLine1 = $"|       '***'      | ";
-            var bottLine2 = $"|      (****)      | ";
-            var bottLine3 = $"|       '___'      | ";
-            var bottLine4 = $"|___________________| ";
+            var thermLine8 = $"| {TempFarenheit8,4} {middleLine8} {TempCels8,4} | ";
+            var thermLine7 = $"| {TempFarenheit7,4} {middleLine7} {TempCels7,4} | ";
+            var thermLine6 = $"| {TempFarenheit6,4} {middleLine6} {TempCels6,4} | ";
+            var thermLine5 = $"| {TempFarenheit5,4} {middleLine5} {TempCels5,4} | ";
+            var thermLine4 = $"| {TempFarenheit4,4} {middleLine4} {TempCels4,4} | ";
+            var thermLine3 = $"| {TempFarenheit3,4} {middleLine3} {TempCels3,4} | ";
+            var thermLine2 = $"| {TempFarenheit2,4} {middleLine2} {TempCels2,4} | ";
+            var thermLine1 = $"| {TempFarenheit1,4} {middleLine1} {TempCels1,4} | ";
+            var thermLine0 = $"| {TempFarenheit0,4} {middleLine0} {TempCels0,4} | ";
+            var thermLine_1 = $"| {TempFarenheit_1,4} {middleLine_1} {TempCels_1,4} | ";
+            var thermLine_2 = $"| {TempFarenheit_2,4} {middleLine_2} {TempCels_2,4} | ";
+            var thermLine_3 = $"| {TempFarenheit_3,4} {middleLine_3} {TempCels_3,4} | ";
+            var thermLine_4 = $"| {TempFarenheit_4,4} {middleLine_4} {TempCels_4,4} | ";
+            var thermLine_5 = $"| {TempFarenheit_5,4} {middleLine_5} {TempCels_5,4} | ";
+            var thermLine_6 = $"| {TempFarenheit_6,4} {middleLine_6} {TempCels_6,4} | ";
+            var thermLine_7 = $"| {TempFarenheit_7,4} {middleLine_7} {TempCels_7,4} | ";
+            var thermLine_8 = $"| {TempFarenheit_8,4} {middleLine_8} {TempCels_8,4} | ";
+            var bottLine1 = $"|        '***'        | ";
+            var bottLine2 = $"|       (*****)       | ";
+            var bottLine3 = $"|        '___'        | ";
+            var bottLine4 = $"|_____________________| ";
 
 
-           thermLine_1=thermLine_1.Replace(middleLine_1, middleLineSpecial);
+
+           thermLine0 = thermLine0.Replace(middleLine0, middleLineSpecial);
+           thermLine_1= thermLine_1.Replace(middleLine_1, middleLineSpecial);
            thermLine_2=thermLine_2.Replace(middleLine_2, middleLineSpecial);
            thermLine_3=thermLine_3.Replace(middleLine_3, middleLineSpecial);
            thermLine_4=thermLine_4.Replace(middleLine_4, middleLineSpecial);
