@@ -149,8 +149,8 @@
                 $"\n{bottLine3}" +
                 $"\n{bottLine4}");
 
-            var newTempCels = Convert.ToString(Console.ReadLine());
-            Console.WriteLine($"Iveskite temperatura: {Console.ReadLine}");
+            //var newTempCels = Convert.ToString(Console.ReadLine());
+           // Console.WriteLine($"Iveskite temperatura: {Console.ReadLine}");
 
             
 
