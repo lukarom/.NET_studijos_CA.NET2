@@ -206,9 +206,13 @@
 
             if (amz1 >= amz2 && amz1 >= amz3)
             {
-                if(amz1 != amz2 && amz1 != amz3)
+                if (amz1 != amz2 && amz1 != amz3)
                 {
                     Console.WriteLine($"{var1} yra vyriausias");
+                }
+                else if (amz1 == amz2 && amz1 == amz3)
+                {
+                    Console.WriteLine($"visi broliai yra vienodo amziaus");
                 }
                 else if (amz1 == amz2)
                 {
@@ -223,6 +227,8 @@
                 {
                     Console.WriteLine($"{var2} ir {var3} yra vienodo amziaus");
                 }
+                
+                
             }
             else if (amz2 >= amz1 && amz2 >=amz3) {
 
@@ -230,6 +236,11 @@
                 {
                     Console.WriteLine($"{var2} yra vyriausias");
                 }
+                else if (amz1 == amz2 && amz1 == amz3)
+                {
+                    Console.WriteLine($"visi broliai yra vienodo amziaus");
+                }
+
                 else if (amz1 == amz2)
                 {
 
@@ -243,7 +254,8 @@
                 {
                     Console.WriteLine($"{var2} ir {var3} yra vienodo amziaus");
                 }
-
+                
+                
             }
             else if (amz3 >= amz1 && amz3 >= amz2)
             {
@@ -251,6 +263,11 @@
                 {
                     Console.WriteLine($"{var3} yra vyriausias");
                 }
+                else if (amz1 == amz2 && amz1 == amz3)
+                {
+                    Console.WriteLine($"visi broliai yra vienodo amziaus");
+
+                }
                 else if (amz1 == amz2)
                 {
 
@@ -264,6 +281,8 @@
                 {
                     Console.WriteLine($"{var2} ir {var3} yra vienodo amziaus");
                 }
+                
+                
 
             }
             
