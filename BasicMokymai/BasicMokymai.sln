@@ -26,9 +26,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_6_Reliaciniai_Kita
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_6_Termometras", "Paskaita_6_Termometras\Paskaita_6_Termometras.csproj", "{BB5E69C7-5AFD-41F7-BF05-0825F8E1801C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_7_Loginiai_Operatoriai", "Paskaita_7_Loginiai_Operatoriai\Paskaita_7_Loginiai_Operatoriai.csproj", "{EA12030C-3F38-4DA4-A833-990B28619CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_7_Loginiai_Operatoriai", "Paskaita_7_Loginiai_Operatoriai\Paskaita_7_Loginiai_Operatoriai.csproj", "{EA12030C-3F38-4DA4-A833-990B28619CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_6_Kelias", "Paskaita_6_Kelias\Paskaita_6_Kelias.csproj", "{B8E5264B-B646-4AE3-A7B0-96A66A78C685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_6_Kelias", "Paskaita_6_Kelias\Paskaita_6_Kelias.csproj", "{B8E5264B-B646-4AE3-A7B0-96A66A78C685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_8_IF", "Paskaita_8_IF\Paskaita_8_IF.csproj", "{F7C4B9AB-DB81-47C4-95FE-36E877D49974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_8_Uzduotys", "Paskaita_8_Uzduotys\Paskaita_8_Uzduotys.csproj", "{77BF4ED4-9873-4103-8544-7D47B5DDF35C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_9_switch_kintamieji", "Paskaita_9_switch_kintamieji\Paskaita_9_switch_kintamieji.csproj", "{ABE53065-1E48-455B-99CA-8E0D691986CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +98,18 @@ Global
 		{B8E5264B-B646-4AE3-A7B0-96A66A78C685}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8E5264B-B646-4AE3-A7B0-96A66A78C685}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8E5264B-B646-4AE3-A7B0-96A66A78C685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C4B9AB-DB81-47C4-95FE-36E877D49974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C4B9AB-DB81-47C4-95FE-36E877D49974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C4B9AB-DB81-47C4-95FE-36E877D49974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C4B9AB-DB81-47C4-95FE-36E877D49974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BF4ED4-9873-4103-8544-7D47B5DDF35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BF4ED4-9873-4103-8544-7D47B5DDF35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BF4ED4-9873-4103-8544-7D47B5DDF35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BF4ED4-9873-4103-8544-7D47B5DDF35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE53065-1E48-455B-99CA-8E0D691986CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE53065-1E48-455B-99CA-8E0D691986CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE53065-1E48-455B-99CA-8E0D691986CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE53065-1E48-455B-99CA-8E0D691986CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
