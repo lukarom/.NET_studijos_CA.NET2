@@ -216,7 +216,6 @@
                 }
                 else if (amz1 == amz2)
                 {
-
                     Console.WriteLine($"{var1} ir {var2} yra vienodo amziaus");
                 }
                 else if (amz1 == amz3)
@@ -240,10 +239,8 @@
                 {
                     Console.WriteLine($"visi broliai yra vienodo amziaus");
                 }
-
                 else if (amz1 == amz2)
                 {
-
                     Console.WriteLine($"{var1} ir {var2} yra vienodo amziaus");
                 }
                 else if (amz1 == amz3)
@@ -266,11 +263,9 @@
                 else if (amz1 == amz2 && amz1 == amz3)
                 {
                     Console.WriteLine($"visi broliai yra vienodo amziaus");
-
                 }
                 else if (amz1 == amz2)
                 {
-
                     Console.WriteLine($"{var1} ir {var2} yra vienodo amziaus");
                 }
                 else if (amz1 == amz3)
