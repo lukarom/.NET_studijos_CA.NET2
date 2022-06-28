@@ -39,10 +39,10 @@ int kontrolinisSk; //sukuriame kontrolinio skaiciaus kintamaji, kad patikrinti a
 
 
 //sukuriame formules pagal wikipedia puslapi pateikta uzduotyje, kad paskaiciuoti pirma ir antra S reiksme
-int S = Convert.ToInt32(asmensKodas.Substring(0, 1)) * 1 + Convert.ToInt32(asmensKodas.Substring(1, 1)) * 2 + 
-    + Convert.ToInt32(asmensKodas.Substring(2, 1)) * 3 + Convert.ToInt32(asmensKodas.Substring(3, 1)) * 4 +
-    + Convert.ToInt32(asmensKodas.Substring(4, 1)) * 5 + 
-    +Convert.ToInt32(asmensKodas.Substring(5, 1)) * 6 + Convert.ToInt32(asmensKodas.Substring(6, 1)) * 7 + 
+int S = Convert.ToInt32(asmensKodas.Substring(0, 1)) * 1 + Convert.ToInt32(asmensKodas.Substring(1, 1)) * 2 +
+    +Convert.ToInt32(asmensKodas.Substring(2, 1)) * 3 + Convert.ToInt32(asmensKodas.Substring(3, 1)) * 4 +
+    +Convert.ToInt32(asmensKodas.Substring(4, 1)) * 5 +
+    +Convert.ToInt32(asmensKodas.Substring(5, 1)) * 6 + Convert.ToInt32(asmensKodas.Substring(6, 1)) * 7 +
     Convert.ToInt32(asmensKodas.Substring(7, 1)) * 8 + Convert.ToInt32(asmensKodas.Substring(8, 1)) * 9 +
     +Convert.ToInt32(asmensKodas.Substring(9, 1)) * 1;
 
@@ -71,7 +71,7 @@ else
 bool kSkPalyginimas = Convert.ToString(kontrolinisSk) == Convert.ToString(asmensKodas.Substring(10, 1));
 // Patikrinimas ar kontrolinisSk sutampa su ivesto asmens kodo paskutiniu skaiciumi
 
-if ( kSkPalyginimas && asmensKodas.Length == 11)
+if (kSkPalyginimas && asmensKodas.Length == 11)
 {
     //---------------------------------------------------------
     //Gimimo metu pagal asmens koda identifikavimas
@@ -83,23 +83,20 @@ if ( kSkPalyginimas && asmensKodas.Length == 11)
     else if (asmensKodas.Substring(0, 1).Equals("3") || asmensKodas.Substring(0, 1).Equals("4") && amzius != "")
     {
         gimimoMetaiAsmKod = amzius20 + gimimoMetaiAsmKod;
-
     }
     else if (asmensKodas.Substring(0, 1).Equals("5") || asmensKodas.Substring(0, 1).Equals("6") && amzius != "")
     {
         gimimoMetaiAsmKod = amzius21 + gimimoMetaiAsmKod;
-
     }
     else
     {
-
+        amzius = "";
     }
     //--------------------------------------------------
     //Lyties nustatatymas pagal asmens koda
     if (asmensKodas.Substring(0, 1).Equals("1") || asmensKodas.Substring(0, 1).Equals("3") || asmensKodas.Substring(0, 1).Equals("5"))
     {
         lytis = "Vyras";
-
     }
     else if (asmensKodas.Substring(0, 1).Equals("2") || asmensKodas.Substring(0, 1).Equals("4") || asmensKodas.Substring(0, 1).Equals("6"))
     {
@@ -112,76 +109,73 @@ if ( kSkPalyginimas && asmensKodas.Length == 11)
 }
 else
 {
-    asmensKodas = "kodas netesingas";
-    
+    asmensKodas = "kodas neteisingas";
+
 }
 
 //---------------------------------------------------
 //amziaus patikimumo patikrinimas
 
- //if salyga kuri patikrina ar ivestas amzius ir gimimo data arba nors vienas kintamasis yra ivesti
- if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) == "" && kSkPalyginimas)
- {
- gimimoMetai = siandDataMetai - Convert.ToInt32(amzius); //gauname gimimo metus atimant amzius nuo dabartiniu
-  
+//if salyga kuri patikrina ar ivestas amzius ir gimimo data arba nors vienas kintamasis yra ivesti
+if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) == "" && kSkPalyginimas)
+{
+    gimimoMetai = siandDataMetai - Convert.ToInt32(amzius); //gauname gimimo metus atimant amzius nuo dabartiniu
+
     //Console.WriteLine(gimimoMetai);
     // Console.WriteLine(gimimoMetaiAsmKod);
-     if (gimimoMetai == gimimoMetaiAsmKod)
-     {
-         amziausPatikimumas = "amzius patikimas";
-     }
-     else
-     {
-         amziausPatikimumas = "amzius pameluotas";
-     }
- }
- else if (Convert.ToString(amzius) == "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
- {
+    if (gimimoMetai == gimimoMetaiAsmKod)
+    {
+        amziausPatikimumas = "amzius patikimas";
+    }
+    else
+    {
+        amziausPatikimumas = "amzius pameluotas";
+    }
+}
+else if (Convert.ToString(amzius) == "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
+{
     gimimoDataAsmKod = gimimoMetaiAsmKod + asmensKodas.Substring(3, 4); //gauname pilna data is asmens kodo yyyyMMdd
     formattedDate = mydate.Insert(4, "-").Insert(7, "-");
     if (gimimoDataAsmKod == mydate)
-     {
-         amziausPatikimumas = "amzius patikimas";
-         
-     }
-     else
-     {
-         amziausPatikimumas = "amzius pameluotas";
-         
+    {
+        amziausPatikimumas = "amzius patikimas";
     }
- }
- else if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
- {
+    else
+    {
+        amziausPatikimumas = "amzius pameluotas";
+    }
+}
+else if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
+{
     //jeigu ivestas ir amzius ir gimimo data patikriname ar ivesta informacija sutampa su asmens kodo gimimo metais
     gimimoMetai = siandDataMetai - Convert.ToInt32(amzius);
-    gimimoDataAsmKod = gimimoMetaiAsmKod + asmensKodas.Substring(3, 4); 
+    gimimoDataAsmKod = gimimoMetaiAsmKod + asmensKodas.Substring(3, 4);
     //palyginame ar asmens kodo data yra lygi su ivesta data ir jei gimimo metai sutampa su asmens kodo gimimo metais
     //isvedame i amziausPatikimumo laukeli atitinkama atsakyma
-     if (gimimoDataAsmKod == mydate && gimimoMetai == gimimoMetaiAsmKod)
-     {
-         amziausPatikimumas = "amzius tikras";
-     }
-     else if (gimimoDataAsmKod != mydate && gimimoMetai == gimimoMetaiAsmKod || gimimoDataAsmKod == mydate && gimimoMetai != gimimoMetaiAsmKod)
-     {
-         amziausPatikimumas = "amzius nepatikimas";
-     }
-     else
-     {
-         amziausPatikimumas = "amzius pameluotas";
-     }
- }
- else
- {
-     amziausPatikimumas = "patikimumui truksta duomenu";
+    if (gimimoDataAsmKod == mydate && gimimoMetai == gimimoMetaiAsmKod)
+    {
+        amziausPatikimumas = "amzius tikras";
+    }
+    else if (gimimoDataAsmKod != mydate && gimimoMetai == gimimoMetaiAsmKod || gimimoDataAsmKod == mydate && gimimoMetai != gimimoMetaiAsmKod)
+    {
+        amziausPatikimumas = "amzius nepatikimas";
+    }
+    else
+    {
+        amziausPatikimumas = "amzius pameluotas";
+    }
+}
+else
+{
+    amziausPatikimumas = "patikimumui truksta duomenu";
+}
 
- }
-
- //Formatuojame data jeigu buvo ivesta
- if(mydate != "")
+//Formatuojame data jeigu buvo ivesta
+if (mydate != "")
 {
     formattedDate = mydate.Insert(4, "-").Insert(7, "-");
 }
- else
+else
 {
     formattedDate = "";
 }
