@@ -8,11 +8,27 @@
             //LinkiuVisiems();
             //VardoIvedimas();
             //LinkiuJums();
-            Console.WriteLine("Iveskite du skaicius");
-            Console.WriteLine(SkaitmenSkaiciai(Convert.ToString(Console.ReadLine()), Convert.ToString(Console.ReadLine())));
-            Console.WriteLine("Iveskite bet koki teksta su tarpais");
-            Console.WriteLine($"Tarpu kiekis yra: {TekstasSuTarpais(Convert.ToString(Console.ReadLine()))}");
+            //Console.WriteLine("Iveskite du skaicius");
+            // Console.WriteLine(SkaitmenSkaiciai(Convert.ToString(Console.ReadLine()), Convert.ToString(Console.ReadLine())));
+            //Console.WriteLine("Iveskite bet koki teksta su tarpais");
+            // Console.WriteLine($"Tarpu kiekis yra: {TekstasSuTarpais(Convert.ToString(Console.ReadLine()))}");
+
+            //Console.WriteLine("Iveskite sakini su tarpais");
+            //Console.WriteLine(ZodziuKiekis(Convert.ToString(Console.ReadLine())));
+
+            //Console.WriteLine("Iveskite betkoki teksta");
+            //Console.WriteLine(TarpuKiekisGale(Convert.ToString(Console.ReadLine())));
+
+            //Console.WriteLine("Iveskite betkoki teksta");
+            //Console.WriteLine(TarpuKiekisPriekyje(Convert.ToString(Console.ReadLine())));
+
+            Console.WriteLine("Iveskite betkoki teksta");
+            TarpaiPriekyjeGale(Convert.ToString(Console.ReadLine()), out int tarpuKiekisGale, out int tarpuKiekisPriekyje);
+            Console.WriteLine($"Tarpu kiekis  {tarpuKiekisGale}");
+            Console.WriteLine($"Tarpu kiekis priekyje {tarpuKiekisPriekyje}");
         }
+
+      
 
         static public void SveikiVisi()
         {
@@ -58,16 +74,53 @@
             }
 
         }
-
+        // Uzduotis 4
         public static int TekstasSuTarpais(string tekstasSuTarpais)
         {
             int tarpuSk = tekstasSuTarpais.Count(Char.IsWhiteSpace);
             return tarpuSk;
         }
 
-        //------------------------------------------------------------------
+        // Uzuduotis 6 ------------------------------------------------------------------
 
+        public static int ZodziuKiekis (string tekstasSuTarpais)
+        {
+            tekstasSuTarpais = tekstasSuTarpais.TrimStart(' ').TrimEnd(' ');
 
+            
+            String [] zodziai = tekstasSuTarpais.Split(" ");
+            int zodziuSkaicius = zodziai.Length;
+
+            return zodziuSkaicius;
+        }
+
+        // Uzduotis 7 ----------------------------------------------------------------------
+
+        public static int TarpuKiekisGale (string tekstas)
+        {
+            int tarpuKiekisGale = tekstas.Length - tekstas.TrimEnd(' ').Length;
+            return tarpuKiekisGale;
+
+        }
+
+        // Uzduotis 8 ----------------------------------------------------------------
+
+        public static int TarpuKiekisPriekyje(string tekstas)
+        {
+            int tarpuKiekisPriekyje = tekstas.Length - tekstas.TrimStart(' ').Length;
+            return tarpuKiekisPriekyje;
+
+        }
+
+        // Uzduotis 9 --------------------------------------------------------------
+
+        public static void TarpaiPriekyjeGale(string tekstas, out int tarpuKiekisGale, out int tarpuKiekisPriekyje)
+        {
+            tarpuKiekisPriekyje = tekstas.Length - tekstas.TrimStart(' ').Length;
+            
+            tarpuKiekisGale = tekstas.Length - tekstas.TrimEnd(' ').Length;
+
+        }
 
 
     } 
