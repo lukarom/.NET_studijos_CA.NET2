@@ -1,6 +1,6 @@
 ﻿namespace Paskaita_11_Metodai_Uzdaviniai
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -10,8 +10,8 @@
             //LinkiuJums();
             //Console.WriteLine("Iveskite du skaicius");
             // Console.WriteLine(SkaitmenSkaiciai(Convert.ToString(Console.ReadLine()), Convert.ToString(Console.ReadLine())));
-            //Console.WriteLine("Iveskite bet koki teksta su tarpais");
-            // Console.WriteLine($"Tarpu kiekis yra: {TekstasSuTarpais(Convert.ToString(Console.ReadLine()))}");
+            Console.WriteLine("Iveskite bet koki teksta su tarpais");
+            Console.WriteLine($"Tarpu kiekis yra: {TekstasSuTarpais(Convert.ToString(Console.ReadLine()))}");
 
             //Console.WriteLine("Iveskite sakini su tarpais");
             //Console.WriteLine(ZodziuKiekis(Convert.ToString(Console.ReadLine())));
@@ -81,14 +81,25 @@
             return tarpuSk;
         }
 
+        // Uzduotis 5  ----------------------------------------------------
+
+        public static int TekstoIlgis(string tekstasSuTarpais)
+        {
+            int tekstoIlgis = tekstasSuTarpais.Trim().Length;
+
+            return tekstoIlgis;
+        }
+
         // Uzuduotis 6 ------------------------------------------------------------------
 
+
         public static int ZodziuKiekis (string tekstasSuTarpais)
-        {
-            tekstasSuTarpais = tekstasSuTarpais.TrimStart(' ').TrimEnd(' ');
+        { 
+            
+            tekstasSuTarpais = tekstasSuTarpais.Trim(' ');
 
             
-            String [] zodziai = tekstasSuTarpais.Split(" ");
+            String [] zodziai = tekstasSuTarpais.Split(" ", StringSplitOptions.RemoveEmptyEntries);
             int zodziuSkaicius = zodziai.Length;
 
             return zodziuSkaicius;

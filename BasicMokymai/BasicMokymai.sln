@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_11_Metodai_Uzdavin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_12_Methods_Test", "Paskaita_12_Methods_Test\Paskaita_12_Methods_Test.csproj", "{52917871-C707-491E-BCA2-8194DF3313EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9B46D386-F21F-4B53-ACC5-BD731AC42DC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52917871-C707-491E-BCA2-8194DF3313EC} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {934538B7-1A4C-4B43-8873-F8A82FBCBEE7}
