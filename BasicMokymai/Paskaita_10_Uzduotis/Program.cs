@@ -117,7 +117,7 @@ else
 //amziaus patikimumo patikrinimas
 
 //if salyga kuri patikrina ar ivestas amzius ir gimimo data arba nors vienas kintamasis yra ivesti
-if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) == "" && kSkPalyginimas)
+if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) == "" && kSkPalyginimas && int.TryParse(amzius, out _))
 {
     gimimoMetai = siandDataMetai - Convert.ToInt32(amzius); //gauname gimimo metus atimant amzius nuo dabartiniu
 
@@ -132,7 +132,7 @@ if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) == "" && kSkPalyg
         amziausPatikimumas = "amzius pameluotas";
     }
 }
-else if (Convert.ToString(amzius) == "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
+else if (Convert.ToString(amzius) == "" && Convert.ToString(mydate) != "" && kSkPalyginimas && int.TryParse(mydate,out _))
 {
     gimimoDataAsmKod = gimimoMetaiAsmKod + asmensKodas.Substring(3, 4); //gauname pilna data is asmens kodo yyyyMMdd
     formattedDate = mydate.Insert(4, "-").Insert(7, "-");
@@ -145,9 +145,10 @@ else if (Convert.ToString(amzius) == "" && Convert.ToString(mydate) != "" && kSk
         amziausPatikimumas = "amzius pameluotas";
     }
 }
-else if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) != "" && kSkPalyginimas)
+else if (Convert.ToString(amzius) != "" && Convert.ToString(mydate) != "" && kSkPalyginimas && int.TryParse(amzius, out _) && int.TryParse(mydate,out _)) 
 {
     //jeigu ivestas ir amzius ir gimimo data patikriname ar ivesta informacija sutampa su asmens kodo gimimo metais
+    
     gimimoMetai = siandDataMetai - Convert.ToInt32(amzius);
     gimimoDataAsmKod = gimimoMetaiAsmKod + asmensKodas.Substring(3, 4);
     //palyginame ar asmens kodo data yra lygi su ivesta data ir jei gimimo metai sutampa su asmens kodo gimimo metais

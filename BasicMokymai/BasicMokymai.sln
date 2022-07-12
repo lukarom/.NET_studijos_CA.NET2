@@ -30,23 +30,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_7_Loginiai_Operato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_6_Kelias", "Paskaita_6_Kelias\Paskaita_6_Kelias.csproj", "{B8E5264B-B646-4AE3-A7B0-96A66A78C685}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_8_IF", "Paskaita_8_IF\Paskaita_8_IF.csproj", "{F7C4B9AB-DB81-47C4-95FE-36E877D49974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_8_IF", "Paskaita_8_IF\Paskaita_8_IF.csproj", "{F7C4B9AB-DB81-47C4-95FE-36E877D49974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_8_Uzduotys", "Paskaita_8_Uzduotys\Paskaita_8_Uzduotys.csproj", "{77BF4ED4-9873-4103-8544-7D47B5DDF35C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_8_Uzduotys", "Paskaita_8_Uzduotys\Paskaita_8_Uzduotys.csproj", "{77BF4ED4-9873-4103-8544-7D47B5DDF35C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_9_switch_kintamieji", "Paskaita_9_switch_kintamieji\Paskaita_9_switch_kintamieji.csproj", "{ABE53065-1E48-455B-99CA-8E0D691986CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_9_switch_kintamieji", "Paskaita_9_switch_kintamieji\Paskaita_9_switch_kintamieji.csproj", "{ABE53065-1E48-455B-99CA-8E0D691986CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_10_String_Manipuliacijos", "Paskaita_10_String_Manipuliacijos\Paskaita_10_String_Manipuliacijos.csproj", "{3A8C9355-3A25-4ACB-BF8D-4A894B0A6F80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_10_String_Manipuliacijos", "Paskaita_10_String_Manipuliacijos\Paskaita_10_String_Manipuliacijos.csproj", "{3A8C9355-3A25-4ACB-BF8D-4A894B0A6F80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_10_Uzduotis", "Paskaita_10_Uzduotis\Paskaita_10_Uzduotis.csproj", "{1A0F90E7-626D-42B1-B897-C8A062151148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_10_Uzduotis", "Paskaita_10_Uzduotis\Paskaita_10_Uzduotis.csproj", "{1A0F90E7-626D-42B1-B897-C8A062151148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_11_metodai", "Paskaita_11_metodai\Paskaita_11_metodai.csproj", "{7DCF1983-59B9-43F6-966A-F884E1DEC9E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_11_metodai", "Paskaita_11_metodai\Paskaita_11_metodai.csproj", "{7DCF1983-59B9-43F6-966A-F884E1DEC9E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_11_Metodai_Uzdaviniai", "Paskaita_11_Metodai_Uzdaviniai\Paskaita_11_Metodai_Uzdaviniai.csproj", "{45E48354-B8D3-40F5-B91E-054CB761A706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_11_Metodai_Uzdaviniai", "Paskaita_11_Metodai_Uzdaviniai\Paskaita_11_Metodai_Uzdaviniai.csproj", "{45E48354-B8D3-40F5-B91E-054CB761A706}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_12_Methods_Test", "Paskaita_12_Methods_Test\Paskaita_12_Methods_Test.csproj", "{52917871-C707-491E-BCA2-8194DF3313EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_12_Methods_Test", "Paskaita_12_Methods_Test\Paskaita_12_Methods_Test.csproj", "{52917871-C707-491E-BCA2-8194DF3313EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9B46D386-F21F-4B53-ACC5-BD731AC42DC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_15_Do_While", "Paskaita_15_Do_While\Paskaita_15_Do_While.csproj", "{8D96FC4E-3C9D-4CB7-BE04-4F44E40A4852}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_14_Debug_DNR", "Paskaita_14_Debug_DNR\Paskaita_14_Debug_DNR.csproj", "{455A02BD-C046-48FD-BCB8-C1F31A25733B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_16_For_Ciklai", "Paskaita_16_For_Ciklai\Paskaita_16_For_Ciklai.csproj", "{551E7B51-CA39-419D-AE2F-B74D763440B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_17_Ciklai_Praktika", "Paskaita_17_Ciklai_Praktika\Paskaita_17_Ciklai_Praktika.csproj", "{E845DAFD-28DA-47DC-9BD3-77108C8057F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -142,6 +150,22 @@ Global
 		{52917871-C707-491E-BCA2-8194DF3313EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52917871-C707-491E-BCA2-8194DF3313EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52917871-C707-491E-BCA2-8194DF3313EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D96FC4E-3C9D-4CB7-BE04-4F44E40A4852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D96FC4E-3C9D-4CB7-BE04-4F44E40A4852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D96FC4E-3C9D-4CB7-BE04-4F44E40A4852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D96FC4E-3C9D-4CB7-BE04-4F44E40A4852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455A02BD-C046-48FD-BCB8-C1F31A25733B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455A02BD-C046-48FD-BCB8-C1F31A25733B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455A02BD-C046-48FD-BCB8-C1F31A25733B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455A02BD-C046-48FD-BCB8-C1F31A25733B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551E7B51-CA39-419D-AE2F-B74D763440B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551E7B51-CA39-419D-AE2F-B74D763440B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551E7B51-CA39-419D-AE2F-B74D763440B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551E7B51-CA39-419D-AE2F-B74D763440B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E845DAFD-28DA-47DC-9BD3-77108C8057F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E845DAFD-28DA-47DC-9BD3-77108C8057F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E845DAFD-28DA-47DC-9BD3-77108C8057F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E845DAFD-28DA-47DC-9BD3-77108C8057F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
