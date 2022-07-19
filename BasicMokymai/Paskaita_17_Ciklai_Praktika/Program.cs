@@ -1,4 +1,6 @@
-﻿namespace Paskaita_17_Ciklai_Praktika
+﻿using System.Text;
+
+namespace Paskaita_17_Ciklai_Praktika
 {
     internal class Program
     {
@@ -8,9 +10,16 @@
 
 
             // ReadIntNumber();
-            double sk = PakeltiLaipsniu2();
+            // double sk = PakeltiLaipsniu2();
 
-            Console.WriteLine(sk);
+            //Console.WriteLine(sk);
+
+            //SkaiciusTrikampis();
+            string sk1 = SkaiciuPiramide();
+            Console.WriteLine(sk1);
+            SkaiciusTrikampisSkaic();
+
+
 
 
         }
@@ -27,15 +36,16 @@
 
                 if (!arSkaiciusTeisingas)
                 {
-                    
+
                     Console.WriteLine("Ivestas skaicius netesingas, bandykite is naujo");
-                    
+
                 }
-    
-                else if(!(arLyginisSkaicius = Convert.ToInt32(skaicius) % 2 == 0))
+
+                else if (!(arLyginisSkaicius = Convert.ToInt32(skaicius) % 2 == 0))
                 {
 
-                    while (!(arLyginisSkaicius = Convert.ToInt32(skaicius) % 2 == 0)) {
+                    while (!(arLyginisSkaicius = Convert.ToInt32(skaicius) % 2 == 0))
+                    {
                         Console.WriteLine("Ivestas skaicius netesingas, bandykite is naujo");
                         continue;
                     }
@@ -44,11 +54,11 @@
                 {
                     Console.WriteLine("Ivestas skaicius" + " " + skaicius);
                     break;
-                    
+
                 }
-                
-                
-            } 
+
+
+            }
         }
 
         public static void IntegerToBinary(int sk)
@@ -68,7 +78,7 @@
                 return 1;
                 break;
             }
-            while (sk ==0 && laipsnis == 0)
+            while (sk == 0 && laipsnis == 0)
             {
                 return 0;
                 break;
@@ -80,7 +90,7 @@
             }
 
             return sk ^ laipsnis;
-            
+
 
         }
 
@@ -91,7 +101,7 @@
             int sk = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Iveskite laipsni kuri kelsime");
             int laipsnis = Convert.ToInt32(Console.ReadLine());
-            
+
             if (sk > 0 && laipsnis == 0)
             {
                 return 1;
@@ -113,12 +123,67 @@
                 }
                 return rezultatas;
             }
-            
 
-           
+
+
+
 
 
         }
 
+        public static void SkaiciusTrikampis()
+        {
+            Console.WriteLine("Iveskite skaiciu nuo 1 iki 9");
+            int sk = Convert.ToInt32(Console.ReadLine());
+            if (Convert.ToInt32(sk) >= 1 && Convert.ToInt32(sk) <= 9)
+            {
+                string sk1 = SkaiciusTrikampisSkaic(sk);
+            }
+            
+            
+
+            
+
+        }
+
+        public static string SkaiciuPiramide()
+        {
+            Console.WriteLine("Iveskite skaiciu nuo 1 iki 9");
+            int sk = Convert.ToInt32(Console.ReadLine());
+            StringBuilder sk1 = new StringBuilder();
+            sk1.Append(Convert.ToString(sk));
+            
+                
+            for (int i = 1; i <= sk; i++) 
+             {
+             sk1 = sk1.Append(Convert.ToInt32(sk));
+             Console.WriteLine(sk1);
+             } 
+            for (int i = sk; i <= 2*sk-1; i++)
+            {
+             sk1 = sk1.Remove(0, 1);
+            Console.WriteLine(sk1);
+            }
+            return sk1.ToString();
+
+                   
+           
+        }
+
+
+
+        public static string SkaiciusTrikampisSkaic(int sk)
+        {
+            Console.WriteLine("Iveskire skaiciu");
+            int sko = Convert.ToInt32(Console.ReadLine());
+            StringBuilder sk1 = new StringBuilder();
+            sk1.Append(Convert.ToString(sko));
+            for (int i = 1; i < sk; i++)
+            {
+                sk1 = sk1.Append(i);
+                Console.WriteLine(sk1);
+            }
+            return sk1.ToString();
+        }
     }
 }

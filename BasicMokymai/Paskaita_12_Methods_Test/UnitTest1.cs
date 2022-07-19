@@ -63,5 +63,27 @@ namespace Paskaita_12_Methods_Test
             Assert.AreEqual(expectedGale, actualGale);
 
         }
+
+        [TestMethod]
+        public void SurastiMaziausiaNariTest1()
+        {
+            int[] fake = { 5, 3, 7, 6, 8, 7, 10 }; ;
+            int expected = 3;
+            int actual = Paskaita_20_Masyvu_Kartojimas.Program.SurastiMaziausiaNari(fake);
+
+            Assert.AreEqual(expected , actual);
+
+        }
+
+        [TestMethod]
+        public void SurastiDidziausiaNariTest1()
+        {
+            int[] fake = { 5, 3, 7, 6, 8, 7, 10 }; ;
+            int expected = 10;
+            int actual = Paskaita_20_Masyvu_Kartojimas.Program.SurastiDidziausiaNari(fake);
+
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }

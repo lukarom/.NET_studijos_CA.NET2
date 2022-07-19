@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Paskaita_11_Metodai_Uzdaviniai\Paskaita_11_Metodai_Uzdaviniai.csproj" />
+    <ProjectReference Include="..\Paskaita_20_Masyvu_Kartojimas\Paskaita_20_Masyvu_Kartojimas.csproj" />
   </ItemGroup>
 
 </Project>
