@@ -1,7 +1,7 @@
-﻿namespace BasicMokymai
+﻿namespace Paskaita_2_WriteLine
 {
 
-    
+
     internal class Program
     {
         static void Main(string[] args)

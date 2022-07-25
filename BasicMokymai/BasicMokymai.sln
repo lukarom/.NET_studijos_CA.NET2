@@ -58,15 +58,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_17_Ciklai_Praktika
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_17_String_Builder", "Paskaita_17_String_Builder\Paskaita_17_String_Builder.csproj", "{F6290D68-254E-4C45-A694-A88EC56CBAD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_18_Masyvai", "Paskaita_18_Masyvai\Paskaita_18_Masyvai.csproj", "{B3B8D171-4864-46B2-AB58-F059F75B9176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_18_Masyvai", "Paskaita_18_Masyvai\Paskaita_18_Masyvai.csproj", "{B3B8D171-4864-46B2-AB58-F059F75B9176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_20_Masyvu_Kartojimas", "Paskaita_20_Masyvu_Kartojimas\Paskaita_20_Masyvu_Kartojimas.csproj", "{FF1B9282-D02D-4574-94A0-8C304DA42A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_20_Masyvu_Kartojimas", "Paskaita_20_Masyvu_Kartojimas\Paskaita_20_Masyvu_Kartojimas.csproj", "{FF1B9282-D02D-4574-94A0-8C304DA42A1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_23_Zodynai_Dictonaries", "Paskaita_23_Zodynai_Dictonaries\Paskaita_23_Zodynai_Dictonaries.csproj", "{13F7A2EF-982E-4F8A-A761-2A932DC42448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_23_Zodynai_Dictonaries", "Paskaita_23_Zodynai_Dictonaries\Paskaita_23_Zodynai_Dictonaries.csproj", "{13F7A2EF-982E-4F8A-A761-2A932DC42448}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas", "Paskaita_21_Super_Skaiciuotuvas\Paskaita_21_Super_Skaiciuotuvas.csproj", "{5D710A5E-0760-4DAD-9560-BC94AB95255B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas_Tests_", "Paskaita_21_Super_Skaiciuotuvas_Tests_\Paskaita_21_Super_Skaiciuotuvas_Tests_.csproj", "{57C42013-77EE-4D69-B4A8-1488C560EBC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuotuvas_Tests_", "Paskaita_21_Super_Skaiciuotuvas_Tests_\Paskaita_21_Super_Skaiciuotuvas_Tests_.csproj", "{57C42013-77EE-4D69-B4A8-1488C560EBC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas_", "Paskaita_21_Super_Skaiciuotuvas_\Paskaita_21_Super_Skaiciuotuvas_.csproj", "{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -202,6 +204,10 @@ Global
 		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

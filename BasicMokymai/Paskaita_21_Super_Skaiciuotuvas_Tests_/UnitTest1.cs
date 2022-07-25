@@ -1,12 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Paskaita_21_Super_Skaiciuotuvas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Paskaita_21_Super_Skaiciuotuvas.Tests
+namespace Paskaita_21_Super_Skaiciuotuvas_Tests_
 {
     [TestClass()]
     public class ProgramTests
