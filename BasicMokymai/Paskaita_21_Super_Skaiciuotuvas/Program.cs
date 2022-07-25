@@ -8,7 +8,7 @@
         static int? veiksmas = null;
         static int meniu = 0;
         static int klaida = 0;
-        static bool testi = true;
+        static bool toliau = true;
 
 
         static void Main(string[] args)
@@ -21,12 +21,14 @@
         public static void SuperSkaiciuotuvas(string ivedimas)
         {
             //klaida = 0;
+
+            //patikriname ar ivedimo ilgis yra daugiau uz 0 ir meniu
             if (ivedimas.Length > 0 && meniu >= 0 && meniu <= 2 && (skaicius1 == null || skaicius2 == null) && veiksmas == null)
             {
                 int ivestis = IntSkaiciausTikrinimas(ivedimas);
                 if ((meniu == 0 && ivestis >= 1 && ivestis <= 2) || (meniu == 1 && ivestis >= 1 && ivestis <= 3) || (meniu >= 1 && ivestis <= 6))
                     if ((meniu == 0 && ivestis == 2) || (meniu == 1 && ivestis == 3))
-                        testi = false; //isejimas is programos
+                        toliau = false; //isejimas is programos
                     else if ((meniu == 0 && ivestis == 1) || (meniu == 1 && ivestis == 1))
                     {
                         rezultatas = null;
@@ -35,7 +37,7 @@
                     else if (meniu == 2 && (ivestis >= 1 && ivestis <= 6))
                     {
                         veiksmas = ivestis;
-                        Console.Write("Pasirinktas veiksmas");
+                        Console.Write("Pasirinktas veiksmas: ");
                         switch (veiksmas)
                         {
                             case 1:
@@ -50,13 +52,6 @@
                             case 4:
                                 Console.WriteLine("/");
                                 break;
-                            case 5:
-                                Console.WriteLine("^");
-                                break;
-                            case 6:
-                                Console.WriteLine("√");
-                                break;
-
                             default:
                                 break;
                         }
@@ -136,14 +131,14 @@
             veiksmas = null;
             klaida = 0;
             meniu = 0;
-            testi = true;
+            toliau = true;
         }
 
         public static void PagrindinisMeniu()
         {
             Console.Clear();
             Reset();
-            while (testi)
+            while (toliau)
             {
                 switch (meniu)
                 {
@@ -186,12 +181,14 @@
 
       
 
-        
+        //Sudeties, Atimties, Daugybos ir Dalybos metodai
 
         public static double Sudetis(double skaicius1, double skaicius2) => skaicius1 + skaicius2;
         public static double Atimtis(double skaicius1, double skaicius2) => skaicius1 - skaicius2;
         public static double Daugyba(double skaicius1, double skaicius2) => skaicius1 * skaicius2;
         public static double Dalyba (double skaicius1, double skaicius2) => skaicius1 / skaicius2;
+
+        //Validacija Double ir Int ivestu reiksmiu
 
         private static double? DoubleSkaiciausTikrinimas(string? tekstas) => double.TryParse(tekstas, out double skaicius) ? skaicius : null;
         private static int IntSkaiciausTikrinimas(string? tekstas) => int.TryParse(tekstas, out int skaicius) ? skaicius : 0;
