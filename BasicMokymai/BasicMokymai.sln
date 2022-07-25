@@ -66,6 +66,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_23_Zodynai_Dictona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas", "Paskaita_21_Super_Skaiciuotuvas\Paskaita_21_Super_Skaiciuotuvas.csproj", "{5D710A5E-0760-4DAD-9560-BC94AB95255B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas_Tests_", "Paskaita_21_Super_Skaiciuotuvas_Tests_\Paskaita_21_Super_Skaiciuotuvas_Tests_.csproj", "{57C42013-77EE-4D69-B4A8-1488C560EBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -196,12 +198,17 @@ Global
 		{5D710A5E-0760-4DAD-9560-BC94AB95255B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D710A5E-0760-4DAD-9560-BC94AB95255B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D710A5E-0760-4DAD-9560-BC94AB95255B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C42013-77EE-4D69-B4A8-1488C560EBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52917871-C707-491E-BCA2-8194DF3313EC} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
+		{57C42013-77EE-4D69-B4A8-1488C560EBC4} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {934538B7-1A4C-4B43-8873-F8A82FBCBEE7}
