@@ -68,7 +68,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuotuvas_Tests_", "Paskaita_21_Super_Skaiciuotuvas_Tests_\Paskaita_21_Super_Skaiciuotuvas_Tests_.csproj", "{57C42013-77EE-4D69-B4A8-1488C560EBC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_21_Super_Skaiciuotuvas_", "Paskaita_21_Super_Skaiciuotuvas_\Paskaita_21_Super_Skaiciuotuvas_.csproj", "{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuotuvas_", "Paskaita_21_Super_Skaiciuotuvas_\Paskaita_21_Super_Skaiciuotuvas_.csproj", "{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_Baigiamasis_Darbas", "Paskaita_Baigiamasis_Darbas\Paskaita_Baigiamasis_Darbas.csproj", "{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -208,6 +210,10 @@ Global
 		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

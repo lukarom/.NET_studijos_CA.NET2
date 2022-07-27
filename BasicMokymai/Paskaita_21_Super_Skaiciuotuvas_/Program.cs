@@ -85,31 +85,26 @@ namespace Paskaita_21_Super_Skaiciuotuvas
             {
                 meniuLangas = 1;
             }
-            else if (meniuLangas == 1 && klaida == 0 && ivedimas == "1")
+            else if (meniuLangas == 1 && klaida == 0 && ivedimas == "2")
             {
-                meniuLangas = 2;
-                veiksmas = Convert.ToInt32(ivedimas);
-                if (veiksmas == 1)
+
+                veiksmas = Convert.ToInt32(ivedimas) - 1;
+                switch (veiksmas)
                 {
-                    Console.WriteLine($"{meniuLangas = 1} + \"+\" ");
+                    case 0:
+                            Console.Write($" {meniuLangas = 2} \"+\" ");
+                    break;
+                    case 1:  Console.WriteLine($"{meniuLangas = 2} \"-\" ");
+                    break;
+                    case 3:  Console.WriteLine($"{meniuLangas = 2} \"*\" ");
+                    break;
+                    case 4:  Console.WriteLine($"{meniuLangas = 2} \"\\\" ");
+                    break;
+                    default: klaida = 2;
+                        break;
+
                 }
-                else if (veiksmas == 2)
-                {
-                    Console.WriteLine($"{meniuLangas = 1} + \"-\" ");
-                }
-                else if (veiksmas == 3)
-                {
-                    Console.WriteLine($"{meniuLangas = 1} + \"*\" ");
-                }
-                else if (veiksmas == 4)
-                {
-                    Console.WriteLine($"{meniuLangas = 1} + \"\\\" ");
-                }
-                else
-                {
-                    klaida = 2;
-                     
-                }
+                
 
                 meniuLangas = 4;
                 pirmasSk = Convert.ToInt32(ivedimas);
@@ -166,18 +161,20 @@ namespace Paskaita_21_Super_Skaiciuotuvas
                 }
                 SuperSkaiciuotuvas(Console.ReadLine());
 
-                while (klaida)
-                {
-                    case 0:
-                        Console.WriteLine("1. Nauja Operacija 2. Išeiti");
+                
+                
+            }
+            switch (klaida)
+            {
+                case 0:
+                    Console.WriteLine("Tokio skaiciaus nera");
                     break;
-                    case 1:
-                        Console.WriteLine("1. Sudetis 2. Atimtis 3. Daugyba 4. Dalyba");
+                case 1:
+                    Console.WriteLine("Dalyba is nulio");
                     break;
-                    case 2:
-                        Console.WriteLine($"Pasirinktas veiksmas: ");
+                case 2:
+                    Console.WriteLine("Ivestas neteisinga reiksme");
                     break;
-                }
             }
         }
     
