@@ -8,6 +8,7 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static int topicChoice;
         public static bool tesiam = true;
+        public static bool atspetasZodis = false;
         public static string word;
         public static string head = null;
         public static string neck = null;
@@ -36,6 +37,8 @@ namespace Paskaita_Baigiamasis_Darbas
         public static string[] kunoDalys = new string[] { "o", "|", "/", "\\", "0"};
 
         public static string[] emptyLetters = new string[] {};
+
+        public static List<string> guessedLetters = new List<string> { };
  
         #endregion 
 
@@ -61,7 +64,7 @@ namespace Paskaita_Baigiamasis_Darbas
         {
                 Console.WriteLine($"1. VARDAI\n2. LIETUVOS MIESTAI\n3. VALSTYBES\n4. KITA");
 
-                HangmanGame(Console.ReadLine());
+                HangmanGame(Console.ReadLine().ToLower());
         }
 
         public static void GetRandomWord(string ivedimas)
@@ -104,20 +107,36 @@ namespace Paskaita_Baigiamasis_Darbas
                 Console.WriteLine("- - - - - - - |");
                 Console.WriteLine($"|             {head}\n|            {lhand}{neck}{rhand}\n|             {torso}\n|            {lleg} {rleg}\n|\n|\n|\n|\n|\n|");
                 Console.WriteLine($"_ _ _ _");
-                Console.WriteLine($"Spetos raides: ");
+                Console.WriteLine($"Spetos raides: {GuessedLetters(ivedimas)}");
                 Console.WriteLine($"Zodis: {GuessedWord(ivedimas)}");
                 Console.WriteLine("\nSpekite raide ar zodi:");
-                HangmanGame(Console.ReadLine());
+                HangmanGame(Console.ReadLine().ToLower());
             }
         }
-        //public static string GuessedLetters(string letters)
-        //{
+        public static string GuessedLetters(string ivedimas)
+        {
+            if (ivedimas.Length > 1)
+            {
 
-        //}
+            }
+            else 
+            if (ivedimas != "" && Char.IsLetter(Convert.ToChar(ivedimas.ToLower())) && !guessedLetters.Contains($" {ivedimas}") && !word.ToLower().Contains(Convert.ToChar(ivedimas)))
+            {
+                guessedLetters.Add($" {ivedimas}");
+            }
+            else
+            {
+                //Console.WriteLine("Wrong");
+            }
+
+            string guessedLettersString = string.Join("", guessedLetters);
+
+            return guessedLettersString;
+        }
         public static string GuessedWord(string ivedimas)
         {
             
-            if (!emptyLetters.Contains("_ "))
+            if (!emptyLetters.Contains("_ ") && atspetasZodis == false)
             {
                 emptyLetters = new string[word.Length];
 
@@ -126,21 +145,41 @@ namespace Paskaita_Baigiamasis_Darbas
                     emptyLetters[runs] = "_ ";
                 }
             }
-            if (word.Contains(Convert.ToChar(ivedimas)))
+            else if (ivedimas.Length == word.Length)
+            {
+                if (ivedimas == word.ToLower())
+                {
+                    atspetasZodis = true;
+                    for (int letter = 0; letter < word.Length; letter++)
+                    {
+
+                        emptyLetters[letter] = $"{word[letter]} ";
+
+                    }
+                }
+                else if (ivedimas.Length > word.Length && ivedimas.Length > 1)
+                {
+                    
+                }
+            }
+            else if (ivedimas != "" && (word.ToLower().Contains(Convert.ToChar(ivedimas)) && ivedimas.Length <= 1 && ivedimas != null))
             {
 
                 for (int letter = 0; letter < word.Length; letter++)
                 {
-                    if (word[letter] == Convert.ToChar(ivedimas))
+                    if (word.ToLower()[letter] == Convert.ToChar(ivedimas))
                     {
-                        emptyLetters[letter] = ivedimas;
+                        emptyLetters[letter] = $"{ivedimas} ";
                     }
                 }      
             }
+            
             else
             {
-
+                Console.WriteLine("Netesinga ivestis, bandykite dar karta");
             }
+         
+
             string emptyLettersString = String.Concat(emptyLetters);
 
             return emptyLettersString;
