@@ -10,13 +10,13 @@ namespace Paskaita_Baigiamasis_Darbas
         public static bool tesiam = true;
         public static bool atspetasZodis = false;
         public static string word;
-        public static string head = null;
-        public static string neck = null;
-        public static string lhand = null;
-        public static string rhand = null;
-        public static string torso = null;
-        public static string lleg = null;
-        public static string rleg = null;
+        public static string head;
+        public static string neck;
+        public static string lhand;
+        public static string rhand;
+        public static string torso;
+        public static string lleg;
+        public static string rleg;
 
         #endregion
         #region Word array declaration
@@ -34,11 +34,15 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static string[] temos = new string[] { "VARDAI", "LIETUVOS MIESTAI", "VALSTYBES", "KITA" };
 
-        public static string[] kunoDalys = new string[] { "o", "|", "/", "\\", "0"};
+        public static string[] kunoDalys = new string[] { "o", "|" , "0", "\\", "/", "/", "\\"};
 
         public static string[] emptyLetters = new string[] {};
 
+        public static string? wordAnswer;
+
         public static List<string> guessedLetters = new List<string> { };
+
+        public static List<string> bodyParts = new List<string> { head, neck, lhand, torso, rhand, lleg, rleg};
  
         #endregion 
 
@@ -101,42 +105,94 @@ namespace Paskaita_Baigiamasis_Darbas
         {
             while (tesiam)
             {
+
+                GuessedWord(ivedimas);
+                GuessedLetters(ivedimas);
+                wordAnswer = string.Join("", emptyLetters).Replace(" ", "");
+
+                if (atspetasZodis == true && (ivedimas == "n" || ivedimas == "N"))
+                {
+
+                    tesiam = false;
+                }
+                else if (atspetasZodis == true && (ivedimas == "y" || ivedimas == "Y"))
+                {
+                    Console.Clear();
+                    atspetasZodis = false;
+                    Reset();
+                    TopicChoiceMenu();
+                }
+                else if ((wordAnswer == word.ToLower() || ivedimas == word.ToLower())) //&& atspetasZodis == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"!!! SVEIKINIMAI !!!");
+                    Console.WriteLine($" :) Zodis teisingas :)");
+                    Console.WriteLine($"Zodis buvo: {word}");
+                    Console.WriteLine($"Pakartoti zaidima T/N ?");
+                    atspetasZodis = true;
+                         
+
+                }
+                else if (atspetasZodis == false)
+                {
                 
                 Console.Clear();
                 //Console.WriteLine($"TEMA: {temos[Convert.ToInt32(ivedimas) - 1]}");
                 Console.WriteLine("- - - - - - - |");
-                Console.WriteLine($"|             {head}\n|            {lhand}{neck}{rhand}\n|             {torso}\n|            {lleg} {rleg}\n|\n|\n|\n|\n|\n|");
-                Console.WriteLine($"_ _ _ _");
-                Console.WriteLine($"Spetos raides: {GuessedLetters(ivedimas)}");
-                Console.WriteLine($"Zodis: {GuessedWord(ivedimas)}");
-                Console.WriteLine("\nSpekite raide ar zodi:");
-                HangmanGame(Console.ReadLine().ToLower());
+                
+                Console.WriteLine($"|             {bodyParts[0]}\n|            {bodyParts[3]}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
+                    Console.WriteLine($"_ _ _ _");
+                    if (guessedLetters.Count > 6)
+                    {
+                        Console.WriteLine($" :( Pralaimejote :( ");
+                        Console.WriteLine($"Zodis buvo: {word}");
+                        Console.WriteLine("Pakartoti zaidima, Y/N?");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
+                        Console.WriteLine($"Zodis: {String.Concat(emptyLetters)}");
+                        
+                        Console.WriteLine("\nSpekite raide ar zodi:");
+                    }
+                }
+
+                if ((wordAnswer != word.ToLower() || ivedimas != word.ToLower()) && tesiam == true)
+                {
+                    HangmanGame(Console.ReadLine().ToLower());
+                }
             }
         }
-        public static string GuessedLetters(string ivedimas)
+        public static void DrawBody()
+        {
+            if (guessedLetters != null && guessedLetters.Count() < 8 && guessedLetters.Count() >= 1)
+            {
+                for (int bodyPart = 0; bodyPart <= guessedLetters.Count(); bodyPart++)
+                {
+                   bodyParts[bodyPart] = kunoDalys[bodyPart];
+                }
+            }
+        }
+        public static void GuessedLetters(string ivedimas)
         {
             if (ivedimas.Length > 1)
             {
-
+                Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
             }
-            else 
-            if (ivedimas != "" && Char.IsLetter(Convert.ToChar(ivedimas.ToLower())) && !guessedLetters.Contains($" {ivedimas}") && !word.ToLower().Contains(Convert.ToChar(ivedimas)))
+            else if (ivedimas != "" && Char.IsLetter(Convert.ToChar(ivedimas.ToLower())) && !guessedLetters.Contains($" {ivedimas}") && !word.ToLower().Contains(Convert.ToChar(ivedimas)))
             {
                 guessedLetters.Add($" {ivedimas}");
+                DrawBody();
             }
             else
             {
                 //Console.WriteLine("Wrong");
-            }
-
-            string guessedLettersString = string.Join("", guessedLetters);
-
-            return guessedLettersString;
+            }          
         }
-        public static string GuessedWord(string ivedimas)
+        public static void GuessedWord(string ivedimas)
         {
             
-            if (!emptyLetters.Contains("_ ") && atspetasZodis == false)
+            if (!emptyLetters.Contains("_ ") && atspetasZodis == false && (wordAnswer != word.ToLower()))
             {
                 emptyLetters = new string[word.Length];
 
@@ -162,7 +218,7 @@ namespace Paskaita_Baigiamasis_Darbas
                     
                 }
             }
-            else if (ivedimas != "" && (word.ToLower().Contains(Convert.ToChar(ivedimas)) && ivedimas.Length <= 1 && ivedimas != null))
+            else if (ivedimas != "" && ivedimas != null && ivedimas.Length <= 1  && (word.ToLower().Contains(Convert.ToChar(ivedimas)) ))
             {
 
                 for (int letter = 0; letter < word.Length; letter++)
@@ -176,18 +232,15 @@ namespace Paskaita_Baigiamasis_Darbas
             
             else
             {
-                Console.WriteLine("Netesinga ivestis, bandykite dar karta");
-            }
-         
-
-            string emptyLettersString = String.Concat(emptyLetters);
-
-            return emptyLettersString;
+               // Console.WriteLine("Netesinga ivestis, bandykite dar karta");
+            }            
         }
         public static void Reset()
         {
             tesiam = true;
             word = null;
+            emptyLetters = new string[] { };
+            guessedLetters.Clear();
         }
     }
         
