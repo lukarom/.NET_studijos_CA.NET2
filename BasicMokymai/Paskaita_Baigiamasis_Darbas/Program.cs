@@ -9,6 +9,10 @@ namespace Paskaita_Baigiamasis_Darbas
         public static int topicChoice;
         public static bool tesiam = true;
         public static bool atspetasZodis = false;
+        public static bool neatspetasZodis = false;
+        public static bool wordInArray = true;
+        public static bool containsInt;
+        public static int screen = 1;
         public static string word;
         public static string head;
         public static string neck;
@@ -40,7 +44,7 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static string? wordAnswer;
 
-        public static List<string> guessedLetters = new List<string> { };
+        public static List<string> guessedLetters = new List<string> {};
 
         public static List<string> bodyParts = new List<string> { head, neck, lhand, torso, rhand, lleg, rleg};
  
@@ -57,17 +61,27 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static void HangmanGame(string ivedimas)
         {
-            if (word == null)
+            if (word == null && int.TryParse(ivedimas, out _) && Convert.ToInt32(ivedimas) > 0 && Convert.ToInt32(ivedimas) < 5)
             {
-                GetRandomWord(ivedimas);
+                if (wordInArray)
+                {
+                    GetRandomWord(ivedimas);
+                }
+               
+            }
+            
+            else if (screen == 1 && int.TryParse(ivedimas, out _) == false)
+            {
+                Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
+                HangmanGame(Console.ReadLine().ToLower());
             }
             DrawTheHangman(ivedimas);
         } 
 
         public static void TopicChoiceMenu()
         {
-                Console.WriteLine($"1. VARDAI\n2. LIETUVOS MIESTAI\n3. VALSTYBES\n4. KITA");
-
+                
+            Console.WriteLine($"1. VARDAI\n2. LIETUVOS MIESTAI\n3. VALSTYBES\n4. KITA");
                 HangmanGame(Console.ReadLine().ToLower());
         }
 
@@ -75,50 +89,62 @@ namespace Paskaita_Baigiamasis_Darbas
         {
 
             var random = new Random();
+            if (vardai.Length != 0 && lietuvosMiestai.Length != 0 && valstybes.Length != 0 && kitiZodziai.Length != 0)
+            {
+                if (ivedimas == "1" && vardai.Length != 0)
+                {
+                    int index = random.Next(vardai.Length);
+                    word = vardai[index];
+                    vardai = Array.FindAll(vardai, i => i != vardai[index]).ToArray();
+                }
+                else if (ivedimas == "2" && lietuvosMiestai.Length != 0)
+                {
+                    int index = random.Next(lietuvosMiestai.Length);
+                    word = lietuvosMiestai[index];
+                    lietuvosMiestai = Array.FindAll(lietuvosMiestai, i => i != lietuvosMiestai[index]).ToArray();
+                }              
+                else if (ivedimas == "3" && valstybes.Length != 0)
+                {
+                    int index = random.Next(valstybes.Length);
+                    word = valstybes[index];
+                    valstybes = Array.FindAll(valstybes, i => i != valstybes[index]).ToArray();
+                }               
+                else if (ivedimas == "4" && kitiZodziai.Length != 0)
+                {
+                    int index = random.Next(kitiZodziai.Length);
+                    word = kitiZodziai[index];
+                    valstybes = Array.FindAll(valstybes, i => i != valstybes[index]).ToArray();
+                }
+                else
+                {
+                    wordInArray = false;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Neliko zodziu, perkraukite programa");
+            }
 
-            if (ivedimas == "1")
-            {
-                int index = random.Next(vardai.Length);
-                word = vardai[index];
-            }
-            else if (ivedimas == "2")
-            {
-                int index = random.Next(lietuvosMiestai.Length);
-                word = lietuvosMiestai[index];
-            }
-            else if (ivedimas == "3")
-            {
-                int index = random.Next(valstybes.Length);
-                word = valstybes[index];
-            }
-            else if (ivedimas == "4")
-            {
-                int index = random.Next(kitiZodziai.Length);
-                word = kitiZodziai[index];
-            }
-            
-            
-            
+
         }
 
         public static void DrawTheHangman(string ivedimas)
         {
             while (tesiam)
             {
-
+                containsInt = ContainsDigit(ivedimas);
                 GuessedWord(ivedimas);
                 GuessedLetters(ivedimas);
                 wordAnswer = string.Join("", emptyLetters).Replace(" ", "");
 
-                if (atspetasZodis == true && (ivedimas == "n" || ivedimas == "N"))
+                if ((atspetasZodis == true || neatspetasZodis == true) && (ivedimas == "n" || ivedimas == "N"))
                 {
 
                     tesiam = false;
                 }
-                else if (atspetasZodis == true && (ivedimas == "y" || ivedimas == "Y"))
+                else if ((atspetasZodis == true || neatspetasZodis == true) && (ivedimas == "y" || ivedimas == "Y"))
                 {
                     Console.Clear();
-                    atspetasZodis = false;
                     Reset();
                     TopicChoiceMenu();
                 }
@@ -135,21 +161,26 @@ namespace Paskaita_Baigiamasis_Darbas
                 }
                 else if (atspetasZodis == false)
                 {
-                
+                    
                 Console.Clear();
                 //Console.WriteLine($"TEMA: {temos[Convert.ToInt32(ivedimas) - 1]}");
-                Console.WriteLine("- - - - - - - |");
-                
-                Console.WriteLine($"|             {bodyParts[0]}\n|            {bodyParts[3]}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
+                Console.WriteLine("- - - - - - - |");                
+                Console.WriteLine($"|             {bodyParts[0]}\n|{bodyParts[3],13}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
                     Console.WriteLine($"_ _ _ _");
-                    if (guessedLetters.Count > 6)
+                    if (guessedLetters.Count > 6 || (ivedimas.Length > 1 && !containsInt))
                     {
+
                         Console.WriteLine($" :( Pralaimejote :( ");
                         Console.WriteLine($"Zodis buvo: {word}");
                         Console.WriteLine("Pakartoti zaidima, Y/N?");
+                        neatspetasZodis = true;
                     }
                     else
                     {
+                        if (containsInt && screen == 2)
+                        {
+                            Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
+                        }
                         Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
                         Console.WriteLine($"Zodis: {String.Concat(emptyLetters)}");
                         
@@ -159,15 +190,16 @@ namespace Paskaita_Baigiamasis_Darbas
 
                 if ((wordAnswer != word.ToLower() || ivedimas != word.ToLower()) && tesiam == true)
                 {
+                    screen = 2;
                     HangmanGame(Console.ReadLine().ToLower());
                 }
             }
         }
         public static void DrawBody()
         {
-            if (guessedLetters != null && guessedLetters.Count() < 8 && guessedLetters.Count() >= 1)
+            if (guessedLetters != null && guessedLetters.Count() <= 7 && guessedLetters.Count() > 0)
             {
-                for (int bodyPart = 0; bodyPart <= guessedLetters.Count(); bodyPart++)
+                for (int bodyPart = 0; bodyPart < guessedLetters.Count(); bodyPart++)
                 {
                    bodyParts[bodyPart] = kunoDalys[bodyPart];
                 }
@@ -179,8 +211,9 @@ namespace Paskaita_Baigiamasis_Darbas
             {
                 Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
             }
-            else if (ivedimas != "" && Char.IsLetter(Convert.ToChar(ivedimas.ToLower())) && !guessedLetters.Contains($" {ivedimas}") && !word.ToLower().Contains(Convert.ToChar(ivedimas)))
+            else if (ivedimas != ""  && Char.IsLetter(Convert.ToChar(ivedimas.ToLower())) && !guessedLetters.Contains($" {ivedimas}") && !word.ToLower().Contains(Convert.ToChar(ivedimas)))
             {
+                
                 guessedLetters.Add($" {ivedimas}");
                 DrawBody();
             }
@@ -241,6 +274,40 @@ namespace Paskaita_Baigiamasis_Darbas
             word = null;
             emptyLetters = new string[] { };
             guessedLetters.Clear();
+            atspetasZodis = false;
+            neatspetasZodis = false;
+            EmptyTheBody();
+            screen = 1;
+        }
+
+        public static bool ContainsDigit(string ivedimas)
+        {
+            bool containsInt = (ivedimas.Any(char.IsDigit));
+
+            return containsInt;
+        }
+
+        public static void StateMachine ()
+        {
+            switch (screen)
+            {
+                case 1:
+                    Console.WriteLine("Choice Menu");
+                    break;
+                    
+                case 2:
+                    Console.WriteLine("Hangman Game");
+                    break;
+                default:
+                    break;
+
+            }
+                
+        }
+
+        public static void EmptyTheBody()
+        {
+            bodyParts = new List<string> { head, neck, lhand, torso, rhand, lleg, rleg };
         }
     }
         
