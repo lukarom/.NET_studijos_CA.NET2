@@ -72,6 +72,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_Baigiamasis_Darbas", "Paskaita_Baigiamasis_Darbas\Paskaita_Baigiamasis_Darbas.csproj", "{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_Bagiamasis_Darbas_Tests", "Paskaita_Bagiamasis_Darbas_Tests\Paskaita_Bagiamasis_Darbas_Tests.csproj", "{918D8FA1-E4D6-4461-8695-69F591A3112E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2} = {62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -214,6 +219,10 @@ Global
 		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -221,6 +230,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{52917871-C707-491E-BCA2-8194DF3313EC} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
 		{57C42013-77EE-4D69-B4A8-1488C560EBC4} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
+		{918D8FA1-E4D6-4461-8695-69F591A3112E} = {9B46D386-F21F-4B53-ACC5-BD731AC42DC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {934538B7-1A4C-4B43-8873-F8A82FBCBEE7}
