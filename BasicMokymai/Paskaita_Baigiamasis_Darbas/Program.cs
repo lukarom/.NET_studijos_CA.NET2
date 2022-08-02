@@ -8,7 +8,7 @@ namespace Paskaita_Baigiamasis_Darbas
 
         
         public static bool continued = true; //nuo sio bool priklauso ar zaidimas tesiamas ar ne
-        public static bool guessedWord = false; //nustato ar buvo atseptas zodis
+        public static bool correctWord = false; //nustato ar buvo atseptas zodis
         public static bool wrongWord = false; //nustato ar nebuvo atspetas zodis
         public static bool wordInArray = true; // nustato ar zodziu masyve dar liko zodziu
         public static bool containsInt; // nustato ar ivedimas turi skaicius
@@ -27,6 +27,7 @@ namespace Paskaita_Baigiamasis_Darbas
         public static string rleg;
 
         #endregion
+
         #region Word array declaration
         public static string[] vardai = new string[] { "Irmantas", "Mindaugas", "Aurelija", "Skirmantas", "Andrzej",
                 "Eleonora", "Marina", "Miroslav", "Anastasija", "Liudvikas" };
@@ -42,9 +43,9 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static string[] temos = new string[] { "VARDAI", "LIETUVOS MIESTAI", "VALSTYBES", "KITA" };
 
-        public static string[] kunoDalys = new string[] { "o", "|" , "0", "\\", "/", "/", "\\"};
+        public static string[] bodyPartDrawing = new string[] { "o", "|" , "0", "\\", "/", "/", "\\"};
 
-        public static string[] emptyLetters = new string[] {};
+        public static string[] guessedWord = new string[] {};
 
         
 
@@ -59,37 +60,6 @@ namespace Paskaita_Baigiamasis_Darbas
         {           
             TopicChoice();
         }
-
-        public static void HangmanGame(string ivedimas) 
-        {
-            input = ivedimas;
-            if (word == null && int.TryParse(input, out _) && Convert.ToInt32(input) > 0 && Convert.ToInt32(input) < 5)
-            {
-                if (wordInArray)
-                {
-
-                    GetRandomWord(input);
-                    topicChoice = temos[Convert.ToInt32(input) - 1];
-                }
-
-            }
-            else if (screen == 1 && (!int.TryParse(input, out _) || input.Length > 1))
-            {
-                Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
-                input = "";
-                HangmanGame(Console.ReadLine().ToLower());
-            }
- 
-           
-                containsInt = ContainsDigit(input);
-                GuessedWord(input);
-                GuessedLetters(input);
-                wordAnswer = string.Join("", emptyLetters).Replace(" ", "");
-            
-                DrawTheHangman(input);
-            
-        } 
-
         public static void TopicChoice()
         {
             while (continued)
@@ -102,37 +72,118 @@ namespace Paskaita_Baigiamasis_Darbas
                 {
                     screen = 2;
                 }
+
+
+                HangmanGame(Console.ReadLine().ToLower());                  
                 
-                HangmanGame(Console.ReadLine().ToLower());               
             }
         }
+        public static void HangmanGame(string ivedimas) 
+        {
+            input = ivedimas;
+            if (word == null && int.TryParse(input, out _) && Convert.ToInt32(input) > 0 && Convert.ToInt32(input) < 5)
+            {               
+                GetRandomWord(input);
+                topicChoice = temos[Convert.ToInt32(input) - 1];               
+            }
+            else if (screen == 1 && (!int.TryParse(input, out _) || input.Length > 1))
+            {
+                Console.WriteLine("Neteisinga ivestis, bandykite dar karta");                
+                HangmanGame(Console.ReadLine().ToLower());
+            }
 
+            if (wordInArray)
+            {
+                containsInt = ContainsDigit(input);
+                GuessedWord(input);
+                GuessedLetters(input);
+                wordAnswer = string.Join("", guessedWord).Replace(" ", "");
+
+                DrawTheHangman(input);
+            }
+        }
+        public static void DrawTheHangman(string ivedimas)
+        {
+            if ((correctWord == true || wrongWord == true) && (ivedimas == "n" || ivedimas == "N"))
+            {
+                continued = false;
+            }
+            else if ((correctWord == true || wrongWord == true) && (ivedimas == "y" || ivedimas == "Y"))
+            {
+                Reset();
+                Console.Clear();
+                TopicChoice();
+            }
+            else if ((wordAnswer == word.ToLower() || ivedimas == word.ToLower())) //&& atspetasZodis == true)
+            {
+                correctWord = true;
+                Console.Clear();
+                Console.WriteLine($"!!! SVEIKINIMAI !!!");
+                Console.WriteLine($" :) Zodis teisingas :)");
+                Console.WriteLine($"Zodis buvo: {word}");
+                Console.WriteLine($"Pakartoti zaidima Y/N ?");
+            }
+            else if (correctWord == false)
+            {
+
+                Console.Clear();
+                Console.WriteLine($"TEMA: {topicChoice}");
+                Console.WriteLine("- - - - - - - |");
+                Console.WriteLine($"|             {bodyParts[0]}\n|{bodyParts[3],13}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
+                Console.WriteLine($"_ _ _ _");
+                if (guessedLetters.Count > 6 || (ivedimas.Length > 1))
+                {
+                    wrongWord = true;
+                    Console.WriteLine($" :( Pralaimejote :( ");
+                    Console.WriteLine($"Zodis buvo: {word}");
+                    Console.WriteLine("Pakartoti zaidima, Y/N?");
+
+                }
+                else
+                {
+                    if (containsInt && screen == 2 && word != "")
+                    {
+                        Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
+                    }
+
+                    Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
+                    Console.WriteLine($"Zodis: {String.Concat(guessedWord)}");
+                    Console.WriteLine("\nSpekite raide ar zodi:");
+                }
+
+            }
+            
+        }
         public static void GetRandomWord(string ivedimas)
         {
 
             var random = new Random();
-            if (vardai.Length != 0 && lietuvosMiestai.Length != 0 && valstybes.Length != 0 && kitiZodziai.Length != 0)
+            if (vardai.Length != 0 || lietuvosMiestai.Length != 0 || valstybes.Length != 0 || kitiZodziai.Length != 0)
             {
                 if (ivedimas == "1" && vardai.Length != 0)
                 {
+                    wordInArray = true;
                     int index = random.Next(vardai.Length);
                     word = vardai[index];
                     vardai = Array.FindAll(vardai, i => i != vardai[index]).ToArray();
                 }
                 else if (ivedimas == "2" && lietuvosMiestai.Length != 0)
                 {
+                    wordInArray = true;
                     int index = random.Next(lietuvosMiestai.Length);
                     word = lietuvosMiestai[index];
                     lietuvosMiestai = Array.FindAll(lietuvosMiestai, i => i != lietuvosMiestai[index]).ToArray();
-                }              
+                }
                 else if (ivedimas == "3" && valstybes.Length != 0)
                 {
+                    wordInArray = true;
                     int index = random.Next(valstybes.Length);
                     word = valstybes[index];
                     valstybes = Array.FindAll(valstybes, i => i != valstybes[index]).ToArray();
-                }               
+                }
                 else if (ivedimas == "4" && kitiZodziai.Length != 0)
                 {
+                    wordInArray = true;
                     int index = random.Next(kitiZodziai.Length);
                     word = kitiZodziai[index];
                     kitiZodziai = Array.FindAll(kitiZodziai, i => i != kitiZodziai[index]).ToArray();
@@ -140,78 +191,25 @@ namespace Paskaita_Baigiamasis_Darbas
                 else
                 {
                     wordInArray = false;
+                    screen = 1;
+                    Console.WriteLine("Neliko zodziu pasirinktoje temoje");
                 }
             }
             else
             {
-                Console.WriteLine("Neliko zodziu, perkraukite programa");
+                wordInArray = false;
+                Console.WriteLine("Neliko zodziu, perkraukote programa");
             }
 
 
-        }
-
-        public static void DrawTheHangman(string ivedimas)
-        {
-                 
-
-                if ((guessedWord == true || wrongWord == true) && (ivedimas == "n" || ivedimas == "N"))
-                {
-                    continued = false;
-                }
-                else if ((guessedWord == true || wrongWord == true) && (ivedimas == "y" || ivedimas == "Y"))
-                {
-                    Reset();
-                    Console.Clear();
-                    TopicChoice();
-                }
-                else if ((wordAnswer == word.ToLower() || ivedimas == word.ToLower())) //&& atspetasZodis == true)
-                {
-                   guessedWord = true;
-                   Console.Clear();
-                   Console.WriteLine($"!!! SVEIKINIMAI !!!");
-                   Console.WriteLine($" :) Zodis teisingas :)");
-                   Console.WriteLine($"Zodis buvo: {word}");
-                   Console.WriteLine($"Pakartoti zaidima Y/N ?");                                          
-                }
-                else if (guessedWord == false)
-                {
-                    
-                  Console.Clear();
-                  Console.WriteLine($"TEMA: {topicChoice}");
-                  Console.WriteLine("- - - - - - - |");                
-                  Console.WriteLine($"|             {bodyParts[0]}\n|{bodyParts[3],13}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
-                  Console.WriteLine($"_ _ _ _");
-                    if (guessedLetters.Count > 6 || (ivedimas.Length > 1))
-                    {
-                        wrongWord = true;
-                       Console.WriteLine($" :( Pralaimejote :( ");
-                       Console.WriteLine($"Zodis buvo: {word}");
-                       Console.WriteLine("Pakartoti zaidima, Y/N?");
-                       
-                    }
-                    else
-                    {
-                        if (containsInt && screen == 2 && word != "")
-                        {
-                            Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
-                        }
-                       
-                       Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
-                       Console.WriteLine($"Zodis: {String.Concat(emptyLetters)}");                        
-                       Console.WriteLine("\nSpekite raide ar zodi:");
-                    }
-                
-                }
-           
-                         
-        }
+        } 
         public static void DrawBody()
         {
             if (guessedLetters != null && guessedLetters.Count() <= 7 && guessedLetters.Count() > 0)
             {
                 for (int bodyPart = 0; bodyPart < guessedLetters.Count(); bodyPart++)
                 {
-                   bodyParts[bodyPart] = kunoDalys[bodyPart];
+                   bodyParts[bodyPart] = bodyPartDrawing[bodyPart];
                 }
             }
         }
@@ -232,24 +230,24 @@ namespace Paskaita_Baigiamasis_Darbas
         public static void GuessedWord(string ivedimas)
         {
             
-            if (!emptyLetters.Contains("_ ") && guessedWord == false && (wordAnswer != word.ToLower()))
+            if (!guessedWord.Contains("_ ") && correctWord == false && (wordAnswer != word.ToLower()))
             {
-                emptyLetters = new string[word.Length];
+                guessedWord = new string[word.Length];
 
                 for (int runs = 0; runs < word.Length; runs++)
                 {
-                    emptyLetters[runs] = "_ ";
+                    guessedWord[runs] = "_ ";
                 }
             }
             if (ivedimas.Length == word.Length)
             {
                 if (ivedimas == word.ToLower() || ivedimas == word)
                 {
-                    guessedWord = true;
+                    correctWord = true;
                     for (int letter = 0; letter < word.Length; letter++)
                     {
 
-                        emptyLetters[letter] = $"{word.ToLower()[letter]} ";
+                        guessedWord[letter] = $"{word.ToLower()[letter]} ";
 
                     }
                 }
@@ -265,55 +263,51 @@ namespace Paskaita_Baigiamasis_Darbas
                 {
                     if (word.ToLower()[letter] == Convert.ToChar(ivedimas))
                     {
-                        emptyLetters[letter] = $"{ivedimas} ";
+                        guessedWord[letter] = $"{ivedimas} ";
                     }
                 }      
             }
-                        
+                  
         }
         public static void Reset()
         {
             continued = true;
             word = null;
-            emptyLetters = new string[] { };
+            guessedWord = new string[] { };
             guessedLetters.Clear();
-            guessedWord = false;
+            correctWord = false;
             wrongWord = false;
             topicChoice = null;
             EmptyTheBody();
             screen = 1;
             input = "";
+            
         }
-
         public static bool ContainsDigit(string ivedimas)
         {
             bool containsInt = (ivedimas.Any(char.IsDigit));
 
             return containsInt;
         }
-
         public static string ResultWord()
         {
             return wordAnswer;
         }
-
         public static void EmptyTheBody()
         {
             bodyParts = new List<string> { head, neck, lhand, torso, rhand, lleg, rleg };
         }
-
         public static bool IfAnswerCorrect()
         {
             if ((wordAnswer == word.ToLower() || input == word.ToLower())) //&& atspetasZodis == true)
             {
-                guessedWord = true;
+                correctWord = true;
             }
-            return guessedWord;          
+            return correctWord;          
         }
-
         public static bool IfAnswerWrong()
         {
-            if (guessedWord == false && guessedLetters.Count > 6 || input.Length > 1)
+            if (correctWord == false && guessedLetters.Count > 6 || input.Length > 1)
             {
                 wrongWord = true;
             }
