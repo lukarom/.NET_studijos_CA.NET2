@@ -56,7 +56,7 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static void Main(string[] args)
         {           
-            UserInput();
+            TopicChoice();
         }
 
         public static void HangmanGame(string ivedimas) 
@@ -71,18 +71,20 @@ namespace Paskaita_Baigiamasis_Darbas
                
             }
 
-            /*else if (screen == 1 && int.TryParse(ivedimas, out _) == false)
+            else if (screen == 1 && int.TryParse(ivedimas, out _) == false)
             {
                 Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
                 HangmanGame(Console.ReadLine().ToLower());
-            }*/
-            
-            DrawTheHangman(ivedimas);
+            }
+            containsInt = ContainsDigit(ivedimas);
+            GuessedWord(ivedimas);
+            GuessedLetters(ivedimas);
+            wordAnswer = string.Join("", emptyLetters).Replace(" ", "");
 
-            
+            DrawTheHangman(ivedimas);
         } 
 
-        public static void UserInput()
+        public static void TopicChoice()
         {
             while (continued)
             {
@@ -90,10 +92,7 @@ namespace Paskaita_Baigiamasis_Darbas
                 {
                     Console.WriteLine($"1. VARDAI\n2. LIETUVOS MIESTAI\n3. VALSTYBES\n4. KITA");
                 }
-                if ((wordAnswer != word.ToLower()  /*ivedimas != word.ToLower())*/ && continued == true))
-                {
-                    screen = 2;
-                }
+                
                 HangmanGame(Console.ReadLine().ToLower());               
             }
         }
@@ -143,30 +142,25 @@ namespace Paskaita_Baigiamasis_Darbas
 
         public static void DrawTheHangman(string ivedimas)
         {
-            
-                containsInt = ContainsDigit(ivedimas);
-                GuessedWord(ivedimas);
-                GuessedLetters(ivedimas);
-                wordAnswer = string.Join("", emptyLetters).Replace(" ", "");
+                 
 
                 if ((atspetasZodis == true || neatspetasZodis == true) && (ivedimas == "n" || ivedimas == "N"))
                 {
-
                     continued = false;
                 }
                 else if ((atspetasZodis == true || neatspetasZodis == true) && (ivedimas == "y" || ivedimas == "Y"))
                 {
-                //    Console.Clear();
-                //    Reset();
-                //    UserInput();
+                    Console.Clear();
+                    Reset();
+                    TopicChoice();
                 }
                 else if ((wordAnswer == word.ToLower() || ivedimas == word.ToLower())) //&& atspetasZodis == true)
                 {
-               //     Console.Clear();
-               //     Console.WriteLine($"!!! SVEIKINIMAI !!!");
-                //    Console.WriteLine($" :) Zodis teisingas :)");
-               //     Console.WriteLine($"Zodis buvo: {word}");
-               //     Console.WriteLine($"Pakartoti zaidima T/N ?");
+                   Console.Clear();
+                   Console.WriteLine($"!!! SVEIKINIMAI !!!");
+                   Console.WriteLine($" :) Zodis teisingas :)");
+                   Console.WriteLine($"Zodis buvo: {word}");
+                   Console.WriteLine($"Pakartoti zaidima T/N ?");
                     atspetasZodis = true;
                          
 
@@ -174,29 +168,30 @@ namespace Paskaita_Baigiamasis_Darbas
                 else if (atspetasZodis == false)
                 {
                     
-                //Console.Clear();
-               // Console.WriteLine($"TEMA: {topicChoice}");
-               // Console.WriteLine("- - - - - - - |");                
-               // Console.WriteLine($"|             {bodyParts[0]}\n|{bodyParts[3],13}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
+                  Console.Clear();
+                  Console.WriteLine($"TEMA: {topicChoice}");
+                  Console.WriteLine("- - - - - - - |");                
+                  Console.WriteLine($"|             {bodyParts[0]}\n|{bodyParts[3],13}{bodyParts[1]}{bodyParts[4]}\n|             {bodyParts[2]}\n|            {bodyParts[5]} {bodyParts[6]}\n|\n|\n|\n|\n|\n|");
                    // Console.WriteLine($"_ _ _ _");
                     if (guessedLetters.Count > 6 || (ivedimas.Length > 1 && !containsInt))
                     {
 
-                       // Console.WriteLine($" :( Pralaimejote :( ");
-                       // Console.WriteLine($"Zodis buvo: {wordAnswer}");
-                       // Console.WriteLine("Pakartoti zaidima, Y/N?");
+                       Console.WriteLine($" :( Pralaimejote :( ");
+                       Console.WriteLine($"Zodis buvo: {word}");
+                       Console.WriteLine("Pakartoti zaidima, Y/N?");
                         neatspetasZodis = true;
                     }
                     else
                     {
                         if (containsInt && screen == 2)
                         {
-                            //Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
+                            Console.WriteLine("Neteisinga ivestis, bandykite dar karta");
                         }
-                       // Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
-                        //Console.WriteLine($"Zodis: {String.Concat(emptyLetters)}");
+                        screen = 2;
+                       Console.WriteLine($"Spetos raides: {string.Join("", guessedLetters)}");
+                       Console.WriteLine($"Zodis: {String.Concat(emptyLetters)}");
                         
-                        //Console.WriteLine("\nSpekite raide ar zodi:");
+                       Console.WriteLine("\nSpekite raide ar zodi:");
                     }
                 }
 
@@ -225,10 +220,7 @@ namespace Paskaita_Baigiamasis_Darbas
                 guessedLetters.Add($" {ivedimas}");
                 DrawBody();
             }
-            else
-            {
-                //Console.WriteLine("Wrong");
-            }          
+                    
         }
         public static void GuessedWord(string ivedimas)
         {
@@ -270,11 +262,7 @@ namespace Paskaita_Baigiamasis_Darbas
                     }
                 }      
             }
-            
-            else
-            {
-               // Console.WriteLine("Netesinga ivestis, bandykite dar karta");
-            }            
+                        
         }
         public static void Reset()
         {
@@ -284,6 +272,7 @@ namespace Paskaita_Baigiamasis_Darbas
             guessedLetters.Clear();
             atspetasZodis = false;
             neatspetasZodis = false;
+            topicChoice = null;
             EmptyTheBody();
             screen = 1;
         }
