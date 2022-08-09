@@ -66,6 +66,7 @@ namespace Paskaita_Baigiamasis_Darbas
             {
                 if (topicChoice == null)
                 {
+                    Console.WriteLine($"Pasirinkite tema:");
                     Console.WriteLine($"1. VARDAI\n2. LIETUVOS MIESTAI\n3. VALSTYBES\n4. KITA");
                 }
                 else
