@@ -70,12 +70,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_21_Super_Skaiciuotuvas_", "Paskaita_21_Super_Skaiciuotuvas_\Paskaita_21_Super_Skaiciuotuvas_.csproj", "{7060110B-F6BA-4FB9-B1D1-47C8DE2BB288}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_Baigiamasis_Darbas", "Paskaita_Baigiamasis_Darbas\Paskaita_Baigiamasis_Darbas.csproj", "{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_Baigiamasis_Darbas", "Paskaita_Baigiamasis_Darbas\Paskaita_Baigiamasis_Darbas.csproj", "{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_Bagiamasis_Darbas_Tests", "Paskaita_Bagiamasis_Darbas_Tests\Paskaita_Bagiamasis_Darbas_Tests.csproj", "{918D8FA1-E4D6-4461-8695-69F591A3112E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_Bagiamasis_Darbas_Tests", "Paskaita_Bagiamasis_Darbas_Tests\Paskaita_Bagiamasis_Darbas_Tests.csproj", "{918D8FA1-E4D6-4461-8695-69F591A3112E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{62E9FF8B-7F27-46C5-BAB5-8CB3598010A2} = {62E9FF8B-7F27-46C5-BAB5-8CB3598010A2}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_30_OOP_Programavimas", "Paskaita_30_OOP_Programavimas\Paskaita_30_OOP_Programavimas.csproj", "{6030857F-6846-4E9D-BF4B-FCD6B52B9767}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paskaita_31_OOP_konstruktoriai", "Paskaita_31_OOP_konstruktoriai\Paskaita_31_OOP_konstruktoriai.csproj", "{ED12933F-01CF-46DE-A46E-9487C33B0CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_32_Metodai", "Paskaita_32_Metodai\Paskaita_32_Metodai.csproj", "{028059BF-535A-41F9-A362-ABA8B3931F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paskaita_32_OopMetodai.Domain", "Paskaita_32_OopMetodai.Domain\Paskaita_32_OopMetodai.Domain.csproj", "{10CCBFE4-4FA4-4E2E-ADE0-B3001268CE2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -223,6 +231,22 @@ Global
 		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{918D8FA1-E4D6-4461-8695-69F591A3112E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6030857F-6846-4E9D-BF4B-FCD6B52B9767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6030857F-6846-4E9D-BF4B-FCD6B52B9767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6030857F-6846-4E9D-BF4B-FCD6B52B9767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6030857F-6846-4E9D-BF4B-FCD6B52B9767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED12933F-01CF-46DE-A46E-9487C33B0CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED12933F-01CF-46DE-A46E-9487C33B0CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED12933F-01CF-46DE-A46E-9487C33B0CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED12933F-01CF-46DE-A46E-9487C33B0CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{028059BF-535A-41F9-A362-ABA8B3931F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028059BF-535A-41F9-A362-ABA8B3931F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028059BF-535A-41F9-A362-ABA8B3931F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028059BF-535A-41F9-A362-ABA8B3931F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10CCBFE4-4FA4-4E2E-ADE0-B3001268CE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10CCBFE4-4FA4-4E2E-ADE0-B3001268CE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10CCBFE4-4FA4-4E2E-ADE0-B3001268CE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10CCBFE4-4FA4-4E2E-ADE0-B3001268CE2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
